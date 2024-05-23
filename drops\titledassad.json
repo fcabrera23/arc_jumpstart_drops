@@ -1,0 +1,22 @@
+{
+  "Title": "Titledassad",
+  "Summary": "Card Descriptionsdfsad",
+  "Type": "Library/Package",
+  "Authors": [
+    {
+      "Name": "sdas",
+      "Link": "dsaas"
+    }
+  ],
+  "Products": [
+    "Azure Database for PostgreSQL"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Medium",
+  "Topic": [
+    "Kubernetes"
+  ]
+}
