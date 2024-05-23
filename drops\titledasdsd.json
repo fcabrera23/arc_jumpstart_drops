@@ -1,0 +1,25 @@
+{
+  "Title": "Titledasdsd",
+  "Summary": "Card Descriptionsfdasdf",
+  "Type": "Library/Package",
+  "Authors": [
+    {
+      "Name": "sdfsaf",
+      "Link": "safas"
+    }
+  ],
+  "Products": [
+    "Azure Database for PostgreSQL",
+    "Azure DevOps"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Low",
+  "Topic": [
+    "K3s",
+    "Container"
+  ]
+}
