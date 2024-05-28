@@ -1,0 +1,24 @@
+{
+  "Title": "DSDSDD",
+  "Summary": "SDFSFDSDF",
+  "Type": "Library/Package",
+  "Authors": [
+    {
+      "Name": "SFDSFDSSDS",
+      "Link": "SDFSD"
+    }
+  ],
+  "Products": [
+    "Azure IoT Edge",
+    "Azure Kubernetes Service Edge Essentials"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Go",
+    ".NET / C#"
+  ],
+  "Difficulty": "Low",
+  "Topic": [
+    "K3s"
+  ]
+}
