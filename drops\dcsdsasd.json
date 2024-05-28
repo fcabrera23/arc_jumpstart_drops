@@ -1,0 +1,24 @@
+{
+  "Title": "dcsdsasd",
+  "Summary": "asdfasdf",
+  "Type": "Library/Package",
+  "Authors": [
+    {
+      "Name": "dsafd",
+      "Link": "sdfs"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure Kubernetes Service Edge Essentials"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topic": [
+    "Kubernetes"
+  ]
+}
