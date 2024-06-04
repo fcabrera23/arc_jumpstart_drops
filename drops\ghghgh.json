@@ -1,0 +1,25 @@
+{
+  "Title": "ghghgh",
+  "Summary": "gvgggh",
+  "Type": "Library/Package",
+  "Authors": [
+    {
+      "Name": "thghfg",
+      "Link": "gvgcfg"
+    }
+  ],
+  "Products": [
+    "Azure ExpressRoute",
+    "Azure IoT Edge"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topic": [
+    "Kubernetes",
+    "K3s"
+  ]
+}
