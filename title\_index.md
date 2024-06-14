@@ -4,43 +4,41 @@
 ![cover selected](./img/image (8).png)
 
 ### Drop Details
-hbhjjbhj
+adsasda
 
 ## Prerequsities
 
-- ### vghgg
-  ```shell
-  ghjhgbjh
-  ```
+- ### adadad
+  > **Note:** asdadad
       
-- ### jkjbjh
-  > **Note:** jhjbhjbjh
+- ### adada
+  > **Note:** adadad
       
-- ### jbhjbhjb
+- ### adada
   ```shell
-  gbhbhj
+  asdad
   ```
       
 
 ## Getting Started
-### jknjn kj
-kjbnjnjk
+### adada
+adad
 ```shell
-kjbjkbjk
+adada
 ```
 
 ## Development Artifacts
-### jbbnhjhjk
-bjhbjhjh
+### adad
+dadad
 ```shell
-jnjnkj
+adadad
 ```
 
 ## Resource
-hbjknjknj
-- jnjknk
-- njknjn
-- jnjknjk
+adad
+- adad
+- adad
+- asdad
 
 
     
