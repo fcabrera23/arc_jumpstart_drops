@@ -4,43 +4,43 @@
 ![cover selected](./img/image (8).png)
 
 ### Drop Details
-uihnjknhjhj
+jyghvgvh
 
 ## Prerequsities
 
-- ### jnkjnjj
+- ### vghvghvgh
   ```shell
-  jbnjhbhb
+  hbhjbhjbhj
   ```
       
-- ### bhjhjbhj
-  > **Note:** jnbjbjb
+- ### jbjbhbjh
+  > **Note:** bhhjbhjbhj
       
-- ### bjbjbjjbh
+- ### vhvgvhg
   ```shell
-  jnjknjk
+  ggvbhvghh
   ```
       
 
 ## Getting Started
-### bjhbhjhbj
-jjbhjbhj
+### jbhjbhj
+jbhjbhbhj
 ```shell
-nbhjbhjbjh
+hbhjbhj
 ```
 
 ## Development Artifacts
-### hjnhjbhbj
-kbhjbjhb
+### jbnjkbjk
+kjbjkbjk
 ```shell
-vbvhvhv
+kjbhjbhj
 ```
 
 ## Resource
-vhvghvgh
-- jnmkjnkj
-- kknjknkj
-- lknnkn
+kjbjbk
+- kjhnjkn
+- jbnjkbk
+- jnjkkj
 
 
     
