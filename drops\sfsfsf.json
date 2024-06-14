@@ -1,0 +1,23 @@
+{
+  "Title": "sfsfsf",
+  "Summary": "sfdsfsf",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "sfsfsf",
+      "Link": "sfsfsf"
+    }
+  ],
+  "Products": [
+    "Azure ExpressRoute",
+    "Azure IoT Edge"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/sfsfsf",
+  "ProgrammingLanguage": [
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topic": [
+    "Kubernetes"
+  ]
+}
