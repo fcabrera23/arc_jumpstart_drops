@@ -1,0 +1,20 @@
+{
+  "Title": "Title",
+  "Summary": "Card Description",
+  "Type": "",
+  "Authors": [
+    {
+      "Name": "Author"
+    }
+  ],
+  "Products": [
+    "Tag",
+    "Tag",
+    "Tag",
+    "Tag"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main//title",
+  "ProgrammingLanguage": [],
+  "Difficulty": "",
+  "Topic": []
+}
