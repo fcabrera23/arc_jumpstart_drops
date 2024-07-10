@@ -1,0 +1,25 @@
+{
+  "Title": "sfeqwefwe",
+  "Summary": "wefwfwef",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "wefwfe",
+      "Link": "wfwfew"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Azure ExpressRoute",
+    "Azure SQL Database"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/sfeqwefwe",
+  "ProgrammingLanguage": [
+    ".NET / C#",
+    "Powershell"
+  ],
+  "Difficulty": "High",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
