@@ -1,0 +1,24 @@
+{
+  "Title": "hghdgsahvcd",
+  "Summary": "adadadadadadadad",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "addaad",
+      "Link": "addad"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Azure ExpressRoute",
+    "Azure IoT Edge"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/hghdgsahvcd",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
