@@ -1,0 +1,24 @@
+{
+  "Title": "hvhgvgh",
+  "Summary": "bvghvghvhg",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "hvghvgh",
+      "Link": "jhvgvgh"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure DevOps",
+    "Azure IoT Edge"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/hvhgvgh",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Low",
+  "Topics": [
+    "K3s"
+  ]
+}
