@@ -1,0 +1,26 @@
+{
+  "Title": "sdcsdcscsd",
+  "Summary": "sadfsadfasdfs",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "sadasfd",
+      "Link": "sdfasdsa"
+    }
+  ],
+  "Products": [
+    "Azure SQL Edge",
+    "Arc-enabled Servers",
+    "Arc-enabled Kubernetes",
+    "Azure Stack HCI"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/library_package/sdcsdcscsd",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Go"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s"
+  ]
+}
