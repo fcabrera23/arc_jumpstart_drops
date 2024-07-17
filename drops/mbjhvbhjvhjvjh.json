@@ -1,0 +1,26 @@
+{
+  "Title": "mbjhvbhjvhjvjh",
+  "Summary": "kjhjkhbbkjh",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "gjhvhvjv",
+      "Link": "jbjhbjhbhjb "
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure Kubernetes Service Edge Essentials",
+    "Azure Operator Insights",
+    "Azure SQL Database"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/library_package/mbjhvbhjvhjvjh",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s"
+  ]
+}
