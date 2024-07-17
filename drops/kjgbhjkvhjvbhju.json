@@ -1,0 +1,26 @@
+{
+  "Title": "kjgbhjkvhjvbhju",
+  "Summary": "jknjhbhjbhjvjhgvyjh",
+  "Type": "script_automation",
+  "Authors": [
+    {
+      "Name": "hjvghvghvvh",
+      "Link": "mnbhjbhj"
+    }
+  ],
+  "Products": [
+    "Azure Monitor",
+    "Azure Private 5G Core",
+    "Prometheus",
+    "Azure Video Indexer"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Advance",
+  "Topics": [
+    "K3s"
+  ]
+}
