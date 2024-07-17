@@ -1,0 +1,27 @@
+{
+  "Title": "hvhjvhjvjvhvjvh",
+  "Summary": "yjffghfcghdcfxgf",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "fddgfxfgfxst",
+      "Link": "hvtddcdytdt"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure IoT Operations",
+    "Azure SQL Database",
+    "Azure Kubernetes Service Edge Essentials"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/ui_dashboard_workbook/hvhjvhjvjvhvjvh",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s",
+    "Kubernetes"
+  ]
+}
