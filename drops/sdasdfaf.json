@@ -1,0 +1,23 @@
+{
+  "Title": "sdasdfaf",
+  "Summary": "adadjabdjhkab",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "afafafa",
+      "Link": "afafafaf"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure Kubernetes Service Edge Essentials"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
