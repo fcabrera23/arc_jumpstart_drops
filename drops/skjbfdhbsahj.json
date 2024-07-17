@@ -1,0 +1,27 @@
+{
+  "Title": "skjbfdhbSAHJ",
+  "Summary": "ajdhajkdhujka",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "sa,jHKa",
+      "Link": "ajdbjhabd"
+    }
+  ],
+  "Products": [
+    "Azure Kubernetes Service Edge Essentials",
+    "Azure IoT Operations",
+    "Azure Operator Insights",
+    "Azure SQL Database"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/library_package/skjbfdhbsahj",
+  "ProgrammingLanguage": [
+    ".NET / C#",
+    "NodeJS"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Container",
+    "K3s"
+  ]
+}
