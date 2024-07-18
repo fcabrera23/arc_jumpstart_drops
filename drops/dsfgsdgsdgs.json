@@ -1,0 +1,26 @@
+{
+  "Title": "dsfgsdgsdgs",
+  "Summary": "dfgsdgsgsg",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "sdfsdf",
+      "Link": "fvsdfsgsd"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure Kubernetes Service Edge Essentials",
+    "Azure DevOps"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Container",
+    "K3s"
+  ]
+}
