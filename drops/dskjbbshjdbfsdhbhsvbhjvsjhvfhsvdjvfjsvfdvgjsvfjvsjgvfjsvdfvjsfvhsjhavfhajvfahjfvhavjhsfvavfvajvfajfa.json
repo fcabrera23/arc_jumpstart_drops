@@ -1,0 +1,29 @@
+{
+  "Title": "dskjbbshjdbfsdhbhsvbhjvsjhvfhsvdjvfjsvfdvgjsvfjvsjgvfjsvdfvjsfvhsjhavfhajvfahjfvhavjhsfvavfvajvfajfa",
+  "Summary": "asdadaaaaaaaaaaaaaaaaaaaaasdfsFASSSFSDFSsfgsdsdhgsdsgsggssggsggsdsssssssssssssssssssssssssssssssssssdgsvbrssfdvsfsdggggggreergergehgheherhereshestrhsrthsrtsrhsthbrsbrtbssrhsbrjrttrstrsjrjsrtrtrsssssssssshrtrsthstjrjtrrshrthrtrsjrtjrttrsjjtrssssssssss",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "kajsbhdadvjavdvagjvdgfvadvgavdvagvdgvajdvsavjdvavsjvdajdvjavjsvjdajsdvjavdjgjavdjasvdjajdsvjasvdvjasjdagsvdvgajvdgvagjdvjavjdvadhvadvhavdasjdhvajhdvjavjshdvajvdjavdvadjvasdvavsdhvajdvjavjdvjavdvajsdvjvajsdvasvdvasvdjasdvasvgdvavsdajvsdjvajsvjjasvdasjvdjasjdasjvdjasdjasvdjvasjdasjdasjvjdhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+      "Link": "asdasdaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure SQL Database",
+    "Azure DevOps",
+    "Azure Operator Insights"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/dskjbbshjdbfsdhbhsvbhjvsjhvfhsvdjvfjsvfdvgjsvfjvsjgvfjsvdfvjsfvhsjhavfhajvfahjfvhavjhsfvavfvajvfajfa",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Go",
+    ".NET / C#",
+    "Bash"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "IoT",
+    "Container"
+  ]
+}
