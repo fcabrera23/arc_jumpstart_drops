@@ -1,0 +1,39 @@
+{
+  "Title": "hjgvhgdghdcjhgxgxdfxhxfgxfxfgdxdfgxfgxfgxfgxfgxfgxfgxghxxgxfxhfxfgxhxfgxfgxgfxgfxfgxfgxfghxgfxfghgfx",
+  "Summary": "hggdcfggggsxersrshrfsxdtydtfkdciytdftydiytdtydcdtydrydytdtdyfytdcrfdcfgdcdgfxssxdfzxfgdxdfzxdfjhvhjvvhgnrt77fffujytjjz6xytrjjx5exj5exe5jrjcrcku6vt7ilbl8yi;u9;un9;uoliytkicjcujxyheyxeh5eh5xhxeehxyxeuxejrcrj5rkcuktucvtvlilyivybl;y;bo;buo;uo;oby;ybolybi",
+  "Type": "tutorial_guide",
+  "Authors": [
+    {
+      "Name": "jbbhjbhvbvhjvhj",
+      "Link": "fdwesfewefwfwewwefw"
+    },
+    {
+      "Name": "jbjbkjjkjkbjkbj",
+      "Link": "wefwefwferherhegh"
+    },
+    {
+      "Name": "jbjbkjbjkjkjkbj",
+      "Link": "wegwegewrgrhthr"
+    },
+    {
+      "Name": "jkbjkbnjkbjkbjk",
+      "Link": "wehrthrtwrrthrwhrw"
+    }
+  ],
+  "Products": [
+    "Azure Operator Insights",
+    "Azure IoT Operations",
+    "Azure Kubernetes Service Edge Essentials",
+    "Azure SQL Database"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/tutorial_guide/hjgvhgdghdcjhgxgxdfxhxfgxfxfgdxdfgxfgxfgxfgxfgxfgxfgxghxxgxfxhfxfgxhxfgxfgxgfxgfxfgxfgxfghxgfxfghgfx",
+  "ProgrammingLanguage": [
+    ".NET / C#",
+    "NodeJS"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s",
+    "Container"
+  ]
+}
