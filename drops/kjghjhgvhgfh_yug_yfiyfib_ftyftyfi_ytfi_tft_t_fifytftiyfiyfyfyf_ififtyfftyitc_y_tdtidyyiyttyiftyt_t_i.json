@@ -1,0 +1,39 @@
+{
+  "Title": "kjghjhgvhgfh yug yfiyfib ftyftyfi ytfi tft t fifytftiyfiyfyfyf ififtyfftyitc y tdtidyyiyttyiftyt t i",
+  "Summary": "gvgh fvg vgcv iyf yfiyftytiydftid   iftiyftyif tti fitfiy fiyf iyt fy i tyf idftiyftftyf itift ti ftfi tfityftyft tf tfifyiftyf tiyf tft fift tyftyftyfyytidtyitiydttyid  fiyf tf it ti tifi  fiftytyf tyf ftf ftf iftty t f fyiyftyftyiftiydtytdiytyty td",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "yuygyggyfytyfty",
+      "Link": "jhygyufyfyfiyify"
+    },
+    {
+      "Name": "cghvchg vyvkjkj",
+      "Link": "hvjhvjhh"
+    },
+    {
+      "Name": "hjvkhgvh hvkghv",
+      "Link": "hvkhgvghvghvgvg"
+    },
+    {
+      "Name": "yftfvyu hvhvkvh",
+      "Link": "hjvhfvgvkyh"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure Kubernetes Service Edge Essentials",
+    "Azure EventGrid Namespace",
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/kjghjhgvhgfh_yug_yfiyfib_ftyftyfi_ytfi_tft_t_fifytftiyfiyfyfyf_ififtyfftyitc_y_tdtidyyiyttyiftyt_t_i",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "Go"
+  ],
+  "Difficulty": "Advance",
+  "Topics": [
+    "K3s",
+    "Container"
+  ]
+}
