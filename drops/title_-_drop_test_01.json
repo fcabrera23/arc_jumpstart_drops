@@ -1,0 +1,26 @@
+{
+  "Title": "Title - Drop Test 01",
+  "Summary": "This is the description of my drop",
+  "Type": "",
+  "Authors": [
+    {
+      "Name": "Mike Rhoads",
+      "Link": "https://www.linkedin.com/in/mike-rhoads/"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Arc-enabled Servers",
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "https://github.com/mrhoads/preview-drop-test01",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Kubernetes",
+    "Industrial IoT",
+    "K3s"
+  ]
+}
