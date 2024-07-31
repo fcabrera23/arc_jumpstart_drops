@@ -1,0 +1,32 @@
+{
+  "Title": "Azure IoT Operations through Polyglot Notebooks",
+  "Summary": "This repository contains a set of Polyglot Notebooks that demonstrate how to use Azure IoT Operations using Codespaces.",
+  "Description": "This repository contains a set of Polyglot Notebooks that demonstrate how to use Azure IoT Operations using Codespaces.",
+  "Cover": "",
+  "Authors": [
+    {
+      "Name": "Emmeline Hoops",
+      "Link": "https://github.com/chaosdinosaur"
+    },
+    {
+      "Name": "Marcel Bindseil",
+      "Link": "https://github.com/bindsi"
+    }
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/azure_iot_operations_through_polyglot_notebooks",
+  "Type": "sample_app",
+  "Difficulty": "Medium",
+  "ProgrammingLanguage": [
+    "Jupyter Notebook",
+    "Go",
+    "Dockerfile",
+    "Shell"
+  ],
+  "Products": [
+    "Azure IoT Operations",
+    "Arc"
+  ],
+  "LastModified": "2024-04-18T00:00:00.000Z",
+  "CreatedDate": "2024-04-18T00:00:00.000Z",
+  "Topics": []
+}
