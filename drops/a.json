@@ -1,0 +1,22 @@
+{
+  "Title": "a",
+  "Summary": "dfsfsefe",
+  "Type": "template",
+  "Authors": [
+    {
+      "Name": "b",
+      "Link": "sefsfefse"
+    }
+  ],
+  "Products": [],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/template/a",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "NodeJS"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "AI",
+    "Container"
+  ]
+}
