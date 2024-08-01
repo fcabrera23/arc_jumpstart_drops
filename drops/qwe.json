@@ -1,0 +1,21 @@
+{
+  "Title": "qwe",
+  "Summary": "dfdf",
+  "Type": "",
+  "Authors": [
+    {
+      "Name": "qwqw",
+      "Link": "dfdf"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Azure Kubernetes Service Edge Essentials"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main//qwe",
+  "ProgrammingLanguage": [
+    "NodeJS"
+  ],
+  "Difficulty": "",
+  "Topics": []
+}
