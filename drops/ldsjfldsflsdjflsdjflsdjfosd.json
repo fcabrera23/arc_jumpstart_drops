@@ -1,0 +1,29 @@
+{
+  "Title": "ldsjfldsflsdjflsdjflsdjfosd",
+  "Summary": "hkaxhfkahxkdahfkhclzxhdlhxdlaxhdoasjdasjdlasjdlasdjfpaso",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "Arvind",
+      "Link": "www.google.com"
+    },
+    {
+      "Name": "Naga",
+      "Link": "facebook.com"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure DevOps",
+    "Azure IoT Operations",
+    "Azure EventGrid Namespace"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/ldsjfldsflsdjflsdjflsdjfosd",
+  "ProgrammingLanguage": [
+    "Bash"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
