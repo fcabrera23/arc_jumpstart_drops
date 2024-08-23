@@ -1,0 +1,25 @@
+{
+  "Title": "Delete Me Drop",
+  "Summary": "This is an example to test the Drops creation wizard",
+  "Type": "tutorial_guide",
+  "Authors": [
+    {
+      "Name": "Mike Rhoads",
+      "Link": "https://www.linkedin.com/in/mike-rhoads"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Arc-enabled Servers",
+    "Azure EventGrid Namespace"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/tutorial_guide/delete_me_drop",
+  "ProgrammingLanguage": [
+    "Bash",
+    "Ansible"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s"
+  ]
+}
