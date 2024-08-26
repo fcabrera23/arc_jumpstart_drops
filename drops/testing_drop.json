@@ -1,0 +1,22 @@
+{
+  "Title": "Testing Drop",
+  "Summary": "Testing this portal Aug 26th^&%#",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "Author",
+      "Link": ""
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "https://github.com/Priyanka082024/Repo1",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
