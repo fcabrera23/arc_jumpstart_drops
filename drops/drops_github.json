@@ -1,0 +1,25 @@
+{
+  "Title": "Drops Github",
+  "Summary": "xzxczszcxczzxvxvxzv\nxxzzzxxz\nczxxcxczxzxcxczcccccccccccccccccc\ncxzczzccczczzxczczccxcccdccccc .\na566777s8assssssssssssssssssssssssssss@#$%%%%%%*()__GGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGGDDVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVTTTTTTTTTTTTTTTTTTTTTT555555555555555",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "Priyanka",
+      "Link": "https://github.com"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "MongoDB",
+    "InfluxDB"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/drops_github",
+  "ProgrammingLanguage": [
+    "Go",
+    "NodeJS"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
