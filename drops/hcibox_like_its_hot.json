@@ -1,0 +1,21 @@
+{
+  "Title": "HCIBox like its hot",
+  "Summary": "HCIBox can be deployed (dropped) like its hot into a custom environment. Use this script to deploy HCIBox in your own hardware. ",
+  "Type": "tutorial_guide",
+  "Authors": [
+    {
+      "Name": "Dale Kirby",
+      "Link": "https://github.com/dkirby-ms"
+    }
+  ],
+  "Products": [],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/tutorial_guide/hcibox_like_its_hot",
+  "ProgrammingLanguage": [
+    "Bicep",
+    "PowerShell"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
