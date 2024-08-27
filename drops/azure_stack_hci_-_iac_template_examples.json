@@ -9,7 +9,7 @@
       "Link": "https://www.linkedin.com/in/migodfre"
     }
   ],
-  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/azure_stack_hci_-_iac_template_examples",
+  "Source": "https://github.com/Azure/arc_jumpstart_drops/tree/main/script_automation/arc_ashci_iac",
   "Type": "script_automation",
   "Difficulty": "Medium",
   "ProgrammingLanguage": [
@@ -20,7 +20,7 @@
     "Azure Stack HCI",
     "Arc"
   ],
-  "LastModified": "2024-04-28T18:25:43.511Z",
+  "LastModified": "2024-05-16T19:43:52.000Z",
   "CreatedDate": "2024-04-28T18:25:43.511Z",
   "Topics": [
     "Azure Stack HCI",
