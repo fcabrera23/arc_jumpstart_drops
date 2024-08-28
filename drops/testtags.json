@@ -1,0 +1,23 @@
+{
+  "Title": "Testtags",
+  "Summary": "sccsfaafsaaaf",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "Priyanka",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/testtags",
+  "ProgrammingLanguage": [
+    "Terraform",
+    "Bash"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "test",
+    "AI",
+    "mmm"
+  ]
+}
