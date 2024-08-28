@@ -1,0 +1,19 @@
+{
+  "Title": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean4",
+  "Summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretiume",
+  "Authors": [
+    {
+      "Name": "priyanka",
+      "Link": "www.gmail.com"
+    }
+  ],
+  "Products": [],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/undefined/lorem_ipsum_dolor_sit_amet,_consectetuer_adipiscing_elit._aenean_commodo_ligula_eget_dolor._aenean4",
+  "ProgrammingLanguage": [
+    "Bash"
+  ],
+  "Difficulty": "",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
