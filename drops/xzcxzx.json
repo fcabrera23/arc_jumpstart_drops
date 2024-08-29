@@ -1,0 +1,22 @@
+{
+  "Title": "xzcxzx",
+  "Summary": "xczzzczzx",
+  "Type": "template",
+  "Authors": [
+    {
+      "Name": "xcxzz",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "MongoDB"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/template/xzcxzx",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s"
+  ]
+}
