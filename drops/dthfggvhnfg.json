@@ -1,0 +1,25 @@
+{
+  "Title": "dthfggvhnfg",
+  "Summary": "edgdfrrhfthfgnvgn",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "testt",
+      "Link": "https://github.com/Pankaja05/pinky"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Servers",
+    "Azure Arc",
+    "Arc-enabled Kubernetes",
+    "Azure EventGrid Namespace"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/dthfggvhnfg",
+  "ProgrammingLanguage": [
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Container"
+  ]
+}
