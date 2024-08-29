@@ -1,0 +1,22 @@
+{
+  "Title": "tyty",
+  "Summary": "Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium.",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "DevSajith",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "fff"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/tyty",
+  "ProgrammingLanguage": [
+    "swift"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "AI"
+  ]
+}
