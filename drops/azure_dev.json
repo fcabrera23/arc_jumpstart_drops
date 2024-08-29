@@ -1,0 +1,27 @@
+{
+  "Title": "Azure dev",
+  "Summary": "Drops cardsdjasjdlsajdlajdlsajdljsaldlasdl",
+  "Type": "template",
+  "Authors": [
+    {
+      "Name": "Usama Shaukat",
+      "Link": "https://github.com/usamashaukt"
+    }
+  ],
+  "Products": [
+    "JG",
+    "FB",
+    "RCc",
+    "LK"
+  ],
+  "Source": "https://github.com/usamashaukt/Drops.git",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI",
+    "IoT",
+    "K3s"
+  ]
+}
