@@ -1,0 +1,23 @@
+{
+  "Title": "zzXzxZzzX",
+  "Summary": "saadasas",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "zzxZzX",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Kubernetes"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/zzxzxzzzx",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "IoT"
+  ]
+}
