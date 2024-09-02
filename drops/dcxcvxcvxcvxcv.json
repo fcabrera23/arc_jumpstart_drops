@@ -1,0 +1,23 @@
+{
+  "Title": "dcxcvxcvxcvxcv",
+  "Summary": "ssdcdcxcvxcxv",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "dcxdcxc",
+      "Link": "csd"
+    }
+  ],
+  "Products": [
+    "Azure Logic Apps",
+    "Azure OpenAI"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/dcxcvxcvxcvxcv",
+  "ProgrammingLanguage": [
+    "NodeJS"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
