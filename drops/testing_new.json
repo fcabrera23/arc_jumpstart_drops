@@ -1,0 +1,29 @@
+{
+  "Title": "Testing new",
+  "Summary": "czzCZCzc",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "Priyanka",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    },
+    {
+      "Name": "Testingtwo",
+      "Link": "https://github.com/"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Azure Operator Insights",
+    "Prometheus"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/testing_new",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "TypeScript"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "AI"
+  ]
+}
