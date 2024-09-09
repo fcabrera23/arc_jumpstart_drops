@@ -1,42 +1,32 @@
 
 ## Overview
 
-![cover selected](./img/Error message shown twice.jpg)
+
 
 ### Drop Details
-dfsddsfdfsdfsffsddf
+ssaasasdasa
 
 ## Prerequsities
 
-- ### xxxzvzx
-  > **Note:** vxzvxzv
-      
-- ### vxvxzzvx
-  > **Note:** vzxxvzzxv
-      
-- ### zxzxvxvvzxx
-  > **Note:** zvzxzxv
+- ### asdadasdadsas
+  > **Note:** sadadsa
       
 
 ## Getting Started
-### vzxxzvxvxvxzvxz
-xvzzvxvzxzxzvxvz
-- v
-- v
-- v
+### dsdsaassad
+asdsdasd
+- sadadsasdas
 
 ## Development Artifacts
-### xvzxzv
-zxzxvxvzxvz
-```shell
-dssgdsgsgdssdgdgsdsg
-```
+### asdadsas
+dsaasads
+![artifact selected](./img/Add Prequisites_Steps_ Issue.png)
 
 ## Resource
-dggddgsdgs
-- gggggg
-- gggggbbbb
-- bbbbbbb
+sdsfssdfdsdfd
+- Zzxzxx
+- xzzxxz
+- xxzssdssa
 
 
     
