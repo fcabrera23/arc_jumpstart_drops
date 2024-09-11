@@ -1,0 +1,22 @@
+{
+  "Title": "DSDFSDFSDF",
+  "Summary": "SFXZFFGCDFG",
+  "Type": "script_automation",
+  "Authors": [
+    {
+      "Name": "ASDF",
+      "Link": "https://github.com/Pankaja05/pinky"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "https://github.com/Pankaja05/pinky",
+  "ProgrammingLanguage": [
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Container"
+  ]
+}
