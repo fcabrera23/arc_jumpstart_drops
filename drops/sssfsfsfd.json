@@ -1,0 +1,23 @@
+{
+  "Title": "sssfsfsfd",
+  "Summary": "dssadasdsa",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "fdff",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Terraform"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "AI"
+  ]
+}
