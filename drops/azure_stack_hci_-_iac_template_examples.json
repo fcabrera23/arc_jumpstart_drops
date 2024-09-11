@@ -9,7 +9,7 @@
       "Link": "https://www.linkedin.com/in/migodfre"
     }
   ],
-  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/azure_stack_hci_-_iac_template_examples",
+  "Source": "https://github.com/Azure/arc_jumpstart_drops/tree/main/script_automation/arc_ashci_iac",
   "Type": "script_automation",
   "Difficulty": "Medium",
   "ProgrammingLanguage": [
