@@ -1,0 +1,23 @@
+{
+  "Title": "bmbmbmb",
+  "Summary": "gcghgghghggh",
+  "Type": "script_automation",
+  "Authors": [
+    {
+      "Name": "scsadssa",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Azure SQL Edge"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/bmbmbmb",
+  "ProgrammingLanguage": [
+    "NodeJS"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "Industrial IoT"
+  ]
+}
