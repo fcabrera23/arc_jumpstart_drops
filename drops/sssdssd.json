@@ -1,0 +1,26 @@
+{
+  "Title": "sssdssd",
+  "Summary": "sasadsadsd",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "sddsdsds",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "",
+  "ProgrammingLanguage": [
+    "Go",
+    "Bicep",
+    "JavaScript"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Container",
+    "K3s"
+  ]
+}
