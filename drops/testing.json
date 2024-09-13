@@ -1,0 +1,25 @@
+{
+  "Title": "Testing",
+  "Summary": "testing",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "Author1",
+      "Link": "https://github.com/Pankaja05/pinky"
+    }
+  ],
+  "Products": [
+    "test",
+    "Azure Arc",
+    "Azure EventGrid Namespace",
+    "Arc-enabled Servers"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/testing",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
