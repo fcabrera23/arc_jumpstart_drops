@@ -1,0 +1,22 @@
+{
+  "Title": "asddsasdaadsdas",
+  "Summary": "sasaasdsadsadsasda",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "sdsaass",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [
+    "Azure Stack HCI"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/asddsasdaadsdas",
+  "ProgrammingLanguage": [
+    "NodeJS"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
