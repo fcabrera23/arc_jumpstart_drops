@@ -1,0 +1,25 @@
+{
+  "Title": "Testing",
+  "Summary": "Testing",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "Test",
+      "Link": "https://github.com/Pankaja05/pinky"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Arc-enabled Servers",
+    "Arc-enabled Kubernetes",
+    "Azure Arc"
+  ],
+  "Source": "https://github.com/Pankaja05/pinky",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
