@@ -1,0 +1,22 @@
+{
+  "Title": "sasasdasadsad",
+  "Summary": "ddasadssasad",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "sadsaadsad",
+      "Link": "https://github.com/Priyanka082024/Repo1"
+    }
+  ],
+  "Products": [
+    "Azure Arc"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/sasasdasadsad",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "AI"
+  ]
+}
