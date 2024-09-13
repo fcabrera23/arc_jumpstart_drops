@@ -9,7 +9,7 @@
       "Link": "https://www.linkedin.com/in/cheng-chen-a8496850/"
     }
   ],
-  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/retrieval-augmented_generation_on_edge_with_azure_arc_&_azure_iot_operations",
+  "Source": "https://github.com/Azure-Samples/azure-edge-extensions-retrieval-augmented-generation",
   "Type": "sample_app",
   "Difficulty": "Medium",
   "ProgrammingLanguage": [
