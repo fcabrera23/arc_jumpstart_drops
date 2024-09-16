@@ -1,0 +1,22 @@
+{
+  "Title": "   fdgdgfgdfdggdf",
+  "Summary": "cxvxvvvx",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "cfsfsfsdfsd",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "Azure SQL Edge"
+  ],
+  "Source": "https://github.com/Priyanka082024/Repo2",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Industrial IoT"
+  ]
+}
