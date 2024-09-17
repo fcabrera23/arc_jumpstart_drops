@@ -1,0 +1,25 @@
+{
+  "Title": "sadasdasd",
+  "Summary": "sadsadasd",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "sadsad",
+      "Link": "www.facebook.com/zaid"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Arc-enabled Servers",
+    "Azure Arc",
+    "Azure EventGrid Namespace"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/sadasdasd",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
