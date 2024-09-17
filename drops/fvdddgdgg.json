@@ -1,0 +1,22 @@
+{
+  "Title": "fvdddgdgg",
+  "Summary": "sdadadasdaadsaddas",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "sdgdggddgs",
+      "Link": "https://github.com/Priyanka082024/Repo2"
+    }
+  ],
+  "Products": [
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/fvdddgdgg",
+  "ProgrammingLanguage": [
+    "PowerShell"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "K3s"
+  ]
+}
