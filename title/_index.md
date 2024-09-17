@@ -1,269 +1,341 @@
-## Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart Overview
+---
+type: docs
+title: "MEC/Edge app solution accelerator based on Azure IoT Operations"
+linkTitle: "Create live video analytics at the edge with 'MEC app solution accelerator' based on Azure IoT Operations (AIO)"
+weight: 1
+description: >
+---
 
-The Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart allows you to test various kinds of Azure Adaptive Cloud solutions for hybrid cloud and edge computing, using technologies such as Azure Arc, Azure Stack HCI, and Azure IoT. It provides a physical NUC compute unit running Windows Server 2025 with a virtualization environment specially designed to work with home labs and edge scenarios. It also provides automated zero-to-hero scenarios for Azure Arc and Azure IoT using the Arc Jumpstart.
+## Overview
 
-![Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart](./artifacts/media/Azure-Adaptive-Cloud-Lab-Kit-x-Arc-Jumpstart.jpg#center)
+### Create live video analytics at the edge with 'MEC app solution accelerator' based on Azure IoT Operations (AIO)
 
-The lab environment provides you with a virtual lab environment, including a physical Hyper-V server running Windows Server 2025 which allows you to run virtual machines. This allows you to leverage this as a platform to run Arc Jumpstart scenarios to try adaptive cloud solutions for hybrid cloud and edge scenarios. It also includes the possibilities to test Azure services such as:
+"Contoso Energy", a fictional company, requires a live video analytics at the edge (in its plants) with alerts dashboards and dynamic provisioning of any number of IP video cameras at the MEC (Multi-access Edge Compute through 5G, Wi-Fi or Ethernet) to provide real-time alerts on issues detected by AI models analyzing the video streams.
 
-- Arc-enabled servers
-- Arc-enabled SQL Server
-- Arc-enabled Kubernetes
-- Arc-enabled data services
-- Arc-enabled app services
-- Arc-enabled machine learning
-- Arc, Edge, and Azure IoT Operations
-- Arc and Azure Lighthouse
-- AKS enable by Azure Arc, AKS Edge Essentials
-- and more
+In a Private MEC (Multi-access Edge Compute) that needs to cover large outdoor/indoor industrial areas, the best fit is to use a private 5G network with 5G video cameras. However, in other use cases Wi-Fi or Ethernet networks can also be used instead of a 5G network.
 
-> [!NOTE]
-> The unofficial Adaptive Cloud Lab Kit is **not** supported by Microsoft and only has community support. This project is **not** sponsored by any third-party.
+### Introduction video
+
+You can get an overview of this application's functionality by watching the following video.
+
+**Important**: Note that the 5G cellular network is optional. You can also try this application with Wi-Fi cameras, Ethernet cameras and even a camera simulator with an RTSP video stream Docker container (pod in Kubernetes) provided out-of-the-box with the application.
+
+<video src="https://private-user-images.githubusercontent.com/1712635/329047025-3dfdf79c-d3b1-493b-935b-6cb52d7a9729.mp4" controls="controls" style="max-width: 640px;">
+</video>
+
+### Goals for the 'MEC app solution accelerator' (This example application)
+
+The application network needs are fullfilled by the infrastructure, requirmentes such as a 5G network or Wi-Fi and edge compute. Deciding for one or another type of network usually depends on the business use case (i.e. large outdoor cover vs. smaller indoor offices cover, or best-in-class network reliability without interferences).
+
+However, aspects such as being able to create a light microservices architecture and event-driven application (**Devices-->AI Model inference-->Events-->Logic-->Alert -->Alert Handlers**) need to be implemented by you as developer and it's precisely the value that this example application provides:
+
+- Recommendations on using event-driven and microservices architecture as implemented by this example application.
+- Showcase of design patterns to implement (Event Pub/Sub, microservices autonomy, extensible events/alerts metadata schemas, etc.).
+- Show how to inference with deep-learning models from a microservice, in this case using 'Yolo', for video/image analytics, then generate the related detection event.
+
+### High level modules architecture
+
+The solution involves the following high level modules or related applications:
+
+- A control-plane application in charge of:
+
+  - Dynamically provision video cameras (n cameras).
+  - (Optional) Dynamically provision of related 5G SIMs, if using a 5G network with Azure Private 5G Core.
+
+- A video analytics and event-driven alerts system in charge of:
+
+  - Scalable video stream ingestion (n streams).
+  - Scalable object/issue detection based on an AI model.
+  - Alert rules engine to determine if an event should be really an alert.
+  - Alerts dashboard UI.
+
+  Below you can see a high-level diagram with the above modules and interaction:
+
+  ![Screenshot showing high level modules architecture diagram](./artifacts/media/arch_01.png)
+
+You can see how the control plane app drives the actions related to provisioning assets such as cameras or SIMs (dotted lines in yellow), while the 'Alert app' is the live system consuming the video streams and detecting issues/alerts with the AI model (lines in white).
+
+### Internal software architecture of the MEC Aplication Solution Accelerator
+
+The internal software architecture (event-driven and microservice oriented architecture) and development technology details are explained in detailed in this page:
+
+![Screenshot showing internal microservices architecture diagram](./artifacts/media/arch_02.png)
+
+For further details and explanations about the internal cloud native and microservices architecture and technologies used, please go to the following page in the source-code original repo at GitHub:
+
+[MEC-Accelerator Internal Software Architecture details](https://github.com/Azure/mec-app-solution-accelerator/blob/main/docs/ARCHITECTURE_MEC_ACCELERATOR.md)
+
+## Functional features of the application
+
+Once the application is deployed into Kubernetes, as mentioned in the high-level modules architecture, there are two main work areas, showcased below.
+
+### Control Plane app UI
+
+The home page of this app basically shows you the main actions you can do from here:
+
+![Screenshot showing home page of MEC control plane app](./artifacts/media/deploy_02.png)
+
+#### (OPTIONAL) 5G SIMs provisioning
+
+As mentioned, this configuration is optional. If you are not using any cellular 5G network, you can also use Wi-Fi or ethernet, as alternatives.
+
+When you click on the 'SIMs Provisioning' menu option, the application will show you the list of SIMs already provisioned in your Azure Private 5G Core network. That information is coming directly from Azure Private 5G Core thorugh its REST APIs.
+
+![Screenshot showing 5G SIM cards list page](./artifacts/media/ui_features_01.png)
+
+The value-added provided by this UI integrated to Azure Private 5G Core is that any regular business application operator can provisiong SIMs without having access to the Azure subscription/portal as an administrator or technical person.
+
+User operators can easily delete or add new SIM cards to the cellular 5G network by providing the typical SIM data:
+
+![Screenshot showing 5G SIM card provisioning page](./artifacts/media/ui_features_02.png)
+
+It's very straightforward because even the IP to be provided comes from the a query to AP5GC with a pool of available IPs. Also the available SIM groups and SIM Policies to assign to.
+
+#### Dynamic provisioning of IP video cameras
+
+The most important asset to provision are the video cameras. This application allows to dynamically provision 'n' number of IP cameras without having to update any code or configuration settings. A user can directly do it from the UI and the pods in Kubernetes will dynamically support the new stream ingestion, as in the following screenshots.
+
+Firstly, you select the type of te IP camera. It can be 5G, Wi-Fi, Ethernet and even an example out-of-the-box pod/container we provide for quick testing:
+
+![Screenshot showing supported IP camera types](./artifacts/media/ui_features_03_02.png)
+
+In the case you have a 5G camera, it's very straigthforward because the app queries the SIMs available in the 5G core, so you simply have to select any available SIM and that will get it's related IP:
+
+![Screenshot showing IP camera provisioning page](./artifacts/media/ui_features_03.png)
+
+The important camera's value in that configuration is the RTSP Uri. The rest of the values are simply to make it easier to construct the Uri, but if you know the Uri of your IP camera, you can also directly provide it, including for Wi-Fi or Ethernet IP cameras, not just 5G cellular cameras.
+
+Once you add any camera to the system you can check that it's working in the 'Cameras dashboard' page:
+
+![Screenshot showing live video of the provisioned IP cameras](./artifacts/media/ui_features_04.png)
+
+### Alerts dashboard app UI
+
+Finally, but as the most important feature of this application, you can see the alerts being triggered and originally detected by the AI model analyzing the video, as in the below screenshot which is detecting a person and showing that fact within a bounding-box:
+
+![Screenshot of Alerts dashboard detecting people](./artifacts/media/ui_features_05.png)
+
+Since these alerts are internally defined as messages going through a MQTT broker following a Publish/Subscription pattern, you could easily extend this application and propagate these alerts as emails, text messages or to any other business system related to alerts.
+
+## Prerequisites
+
+There are a few infrastructure prerequisites explained in the following sections.
+
+### Supported infrastructure environments at the edge
+
+This version of MEC-App-Accelerator supports the following Kubernetes distributions and host operating system.
+
+- **AKS Edge Essentials on Windows**
+- **K3s on Ubuntu Linux**
+
+Additionally and on top of the Kubernetes/k3s cluster, you need to install **Azure IoT Operations**, related to the following assets:
+
+- IoT MQ as messaging broker
+- AKRI for dynamic cameras provissioning (Curently using the AKRI OSS version).
+
+### Install the Kubernetes/K3s cluster at the edge
+
+Install the AKS-EE-Windows cluster or the K3s-Ubuntu cluster by following the instructions in the below Microsoft official doc.
+
+**A. Install AKS-EE-Windows alternative:**
+
+[Create your Azure Arc-enabled Kubernetes cluster on Windows](https://learn.microsoft.com/en-us/azure/iot-operations/deploy-iot-ops/howto-prepare-cluster?tabs=aks-edge-essentials)
+
+**B. Install K3s-Ubuntu-Linux alternative:**
+
+[Create your Azure Arc-enabled K3s cluster on Ubuntu-Linux](https://learn.microsoft.com/en-us/azure/iot-operations/get-started/quickstart-deploy?tabs=linux#connect-a-kubernetes-cluster-to-azure-arc)
+
+### Install Azure IoT Operations into your Kubernetes cluster
+
+#### Prerequisites for Azure IoT Operations
+
+It's important to check and install the prerequisites for Azure IoT Operations explained here:
+
+[Prerequisites for Azure IoT Operations](https://learn.microsoft.com/en-us/azure/iot-operations/get-started/quickstart-deploy?tabs=windows#prerequisites)
+
+#### Deploy Azure IoT Operations
+
+Install Azure IoT Operations by following the official "simplified/automated approach" documentation here:
+
+[Deploy Azure IoT Operations Preview](https://learn.microsoft.com/en-us/azure/iot-operations/get-started/quickstart-deploy?tabs=windows#deploy-azure-iot-operations-preview)
+
+### Clone the MEC-Accelerator GitHub repo
+
+You need to clone the MEC-Accelerator GitHub repo in the client machine from where you will deploy the application against your Kubernetes/k3s cluster.
+
+Basically, you need to have the cloned repo in the same machine from where you also use KUBECTL against your K8s/K3s cluster.
+
+Logically, you need to have [installed Git](https://git-scm.com/downloads) in the first place.
+
+Then, using a command-line tool (PowerShell in Windows or Bash in Linux) clone the repo:
+
+```shell
+git clone https://github.com/Azure/mec-app-solution-accelerator.git
+```
+
+## Getting Started
+
+### Deploy the MEC Application Solution Accelerator into your Kubernetes cluster at the edge
+
+#### Go to the deployment folder
+
+From the console, move to the deployment folder within the cloned repo:
+
+```shell
+cd <YOUR PATH>/deploy/k8s
+```
+
+#### (OPTIONAL) Update the application control plane configuration for accesing your Azure Private 5G network
+
+Update the config map that contains essential information for connecting to our Azure Mobile Network. You'll find the configuration in the file `deploy/k8s/12-control-plane-api-config-map.yaml`.
+
+Replace the following values in the file:
+
+```yaml
+MobileNetwork__SubscriptionId: "your_subscription_id"
+MobileNetwork__ResourceGroup: "your_resource_group"
+MobileNetwork__Name: "your_network_name"
+MobileNetwork__AttachedDataNetwork: "your_attachedDataNetwork_fullID"
+MobileNetwork__Slice: "your_slice_fullID"
+ClientCredentials__TenantId: "your_tenant_id"
+ClientCredentials__ClientId: "your_client_id"
+ClientCredentials__ClientSecret: "your_client_secret"
+```
+
+_Note:_ This step is required if you want to manage SIMs provisioning from this app against AP5GC (Azure Private 5G Core) in Azure.
+
+However, if you will only use IP cameras of type Wi-Fi, Ethernet our our example video stream RTSP container for testing, you can skip this part if you don't have an Azure Private 5G Core Mobile Network and packet core deployed into an ASE, RAN, 5G UEs, etc.
+
+#### Check your kubectl context
+
+Make sure that your default kubectl context is pointing to the right cluster:
+
+Open a new command-shell and run the following command to check your current contexts:
+
+```powershell
+kubectl config get-contexts
+```
+
+To set the context to point to the right Kuberentes cluster, use kubectl and provide the name of the context to use:
+
+```powershell
+kubectl config use-context [my-cluster-context]
+```
+
+#### Run the application deployment script
+
+Within the `deploy/k8s` folder there are two Script files, one for Windows and one for Linux that handle the application deployment into the cluster, including dependencies such as Dapr and AKRI.
+
+The script will run the following deployment steps:
+
+- Install Dapr and Helm.
+- Initialize mec-accelerator namespace in the cluster where all the resources will be deployed.
+- Install Akri with the specific version depending on the Kubernetes distro used (k8s/k3s).
+- Deploy the selected MQTT broker.
+- Deploy the rest of the accelerator resources (microservices pods).
+
+The script needs two arguments to be provided depending on the cluster type and the MQTT broker selected:
+
+- **Kubernetes distro:** The `kubernetesDistro` parameter supports Kubernetes and K3s. Supported choice arguments are `k8s` and `k3s`.
+
+- **MQTT broker:** The `mqttBroker` parameter supports Azure IoT MQ broker (aka. E4K) and Mosquitto. Supported choice arguments are `E4K` and `mosquitto`.
+
+Note that if using Azure IoT MQ broker, **Azure Arc** and **Azure IoT Operations** must be installed in the cluster based on the provided initial instructions above.
+
+**IMPORTANT:** The application setup script needs to be executed on the same machine/environment where you would typically run KUBECTL against your cluster, so it can be on the same cluster's machine (i.e. where you have installed AKS Edge Essentials) or on any client machine able to use KUBECTL against your k3s/Ubuntu-VM cluster.
+
+#### OPTION A: Execute the script in Windows
+
+Execute the script `deploy-accelerator.ps1` while providing the selected parameters:
+
+For deploying into AKS Edge Essentials or a plain K3S in an Ubuntu-Linux, with Azure IoT MQ (aka.E4K), the command is the following:
+
+```powershell
+.\deploy-accelerator.ps1 -kubernetesDistro k3s -mqttBroker E4K
+```
+
+#### OPTION B: Execute the script in Linux
+
+Execute the script `deploy-accelerator.sh` while providing the selected parameters:
+
+For deploying into AKS Edge Essentials or a plain K3S in an Ubuntu-Linux, with Azure IoT MQ (aka.E4K), the command is the following:
+
+```powershell
+./deploy-accelerator.sh --kubernetesDistro k3s --mqttBroker E4K
+```
+
+Basically, the only difference in usage should be the script file name (**.ps1** vs. **.sh**).
+
+Here's an example of the application's setup script execution:
+
+![Screenshot of command line executing the app deployment script](./artifacts/media/deploy_00.png)
+
+#### Try the 'Control Plain app' to provision cameras
+
+In order to know the URL for the 'Control Plain web app' (IP and port to use), type the following command:
+
+```powershell
+kubectl get services --namespace mec-accelerator
+```
+
+![Screenshot of command line with KUBECTL showing the Kubernetes services for the MEC-Accelerator namespace](./artifacts/media/deploy_06.png)
+
+Then search for the service with name **"control-plane-ui-service"** and related IP and external port, so you write a URL similar to the following in a browser:
+
+`http://<your-IP>:90/`
+
+![Screenshot of the MEC-Accelerator control plane app](./artifacts/media/deploy_02.png)
+
+#### Access the Alerts dashboard UI with Alerts originated from AI model detections
+
+To access the Alerts dashboard app you need to know its URL (IP and port to use). Type the following command to discover that URL:
+
+```powershell
+kubectl get services --namespace mec-accelerator
+```
+
+![Screenshot of command line with KUBECTL showing the Kubernetes services for the MEC-Accelerator namespace](./artifacts/media/deploy_07.png)
+
+Then search for the service with name **"alerts-ui"** and related IP and external port, so you write a URL similar to the following in a browser:
+
+`http://<your-IP>:88/`
+
+Alternatively, you can also click on the link "Alerts Dashboard" from the Control-Plane app here:
+
+![Screenshot of command line with KUBECTL showing the Kubernetes services for the MEC-Accelerator namespace](./artifacts/media/deploy_03.png)
+
+Following any of those ways you should be able to run the 'Alerts dashboard UI' and check out the Alerts originated from the AI models when analyzing the video coming from the cameras you need to provision in the first place:
+
+![Screenshot showing the Alerts dashboard web app](./artifacts/media/deploy_05.png)
+
+#### Uninstall the MEC-Application from Kubernetes
+
+In order to remove the application from your Kubernetes cluster, follow these simple steps:
+
+- Open a new command-shell and change the current folder to the `deploy/k8s` folder of this repo.
+
+- Run the `deploy-accelerator` script with the **uninstall** parameter to remove all related application's resources from Kubernetes.
+
+Windows:
+
+```powershell
+.\deploy-accelerator.ps1 -uninstall
+```
+
+Linux:
+
+```powershell
+.\deploy-accelerator.sh -- uninstall
+```
+
+## Resources
+
+For more detailed information about the 'MEC Application Solution Accelerator', review the following resources:
+
+- [MEC Application Solution Accelerator GitHub repo](https://github.com/Azure/mec-app-solution-accelerator)
 
 ## Contributors
 
 This Jumpstart Drop was originally written by the following contributors:
 
-- [Thomas Maurer | Principal Program Manager](https://www.linkedin.com/in/thomasmaurer2)
-
-- [Contribute to the Azure Adaptive Cloud Lab Kit](https://github.com/thomasmaurer/AdaptiveCloudLabKit/)
-
-## Getting Started
-
-The Azure Adaptive Cloud Lab Kit x Arc Jumpstart consists of two components: the lab environment and the self-guided Arc Jumpstart scenarios. The Arc Jumpstart scenarios are directly hosted on the Arc Jumpstart website and can be used for creating your labs.
-
-![Azure Adaptive Cloud Lab Kit Architecture](./artifacts/media/Azure-Adaptive-Cloud-Lab-Kit-Archiecture.jpg#center)
-
-### Important things to know 
-
-- This lab kit contains evaluation software that is designed for IT professionals interested in evaluating Windows Server and Azure solutions and tools on behalf of their organization. We do not recommend that you install this evaluation if you are not an IT professional or are not professionally managing corporate networks or devices.
-- Additionally, the lab environment is intended for evaluation purposes only. It is a standalone virtual environment and should not be used or connected to your production environment.
-- The Windows Server 2025 Evaluation version expires 180 days after the lab is provisioned.
-- This project is a community project and is **not** sponsored by any third-party.
-- The unofficial Adaptive Cloud Lab Kit is **not** supported by Microsoft and only has community support.
-- You are welcome to [support and contirbute to the project](https://github.com/thomasmaurer/AdaptiveCloudLabKit/).
-- Windows Server 2025 Evaluation licenses should only be used for evaluation porpuses.
-- By enabling additional Azure services, additional costs may apply.
-
-## Prerequisites
-
-To get started with the Azure Adaptive Cloud Lab Kit you need the following:
-
-- Lab Kit Hardware (Intel ASUS NUC or similar)
-- Windows Server 2025 Evaluation version
-- USB flash drive
-- Azure Subscription
-- Internet Connectivity
-
-### Lab Kit Hardware
-
-The Azure Adaptive Cloud Lab Kit x Arc Jumpstart consists of, and is built by using an Intel NUC, NUC stands for Next Unit of Computing and is a line of small-form-factor barebone computer kits designed by Intel. The advantage of this machine is the small formfactor, low power consumption and almost no fan noise.
-
-> [!NOTE]
-> Also other hardware systems with similar specifications can be used.
-
-| Amount| Hardware | 
-| ------- | -- | 
-| 1x | ASUS NUC 13 Pro Kit NUC13ANHi5 (Intel Core i5-1340P) | 
-| 1x | WD Black SN850X 1000 GB, M.2 2280 | 
-| 2x | Corsair Vengeance 32GB, 3200 MHz, DDR4-RAM, SO-DIMM |
-
-> [!NOTE]
-> The Intel ASUS NUC hardware doesn't provide any drivers for Windows Server operating systems. Therefore, networking drivers need to be added with a workaround.
-
-![Lab Kit hardware](./artifacts/media/Lab-Kit-Hardware-Intel-ASUS-NUC-scaled.jpg#center)
-
- ### System Requirements
-
-- The lab environment used with this lab guide supports the 64-bit editions of Windows Server 2025 or later. 
-- The Hyper-V Host on which the lab needs to be imported must meet the following minimum specifications:
-- Hyper-V role installed
-- Administrative rights on the device
-- 500 GB of free disk space (1TB recommended)
-- High-throughput disk subsystem
-- 32GB of available memory (64 GB recommended)
-- High-end processor for faster processing (Intel Core i5 or higher)
-
-### Windows Server 2025 Evaluation version
-
-Download the latest Windows Server 2025 Evaluation version here: 
-
-[Evaluaton Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025)
-
-### Azure Subscription
-
-To use Azure services, you will need to use an Azure subscription. If you don't have an Azure subscription check out the following links:
-
-[Azure free account](https://azure.microsoft.com/free/)
-
-### Internet Connectivity
-
-Please use a broad bandwidth to download this content to enhance your downloading experience.
-
-## Installation Guide
-
-You can follow these basic steps to set up your Azure Adaptive Cloud Lab Kit feat. Arc Jumpstart with the following steps.
-
-### Build your NUC hardware
-
-If your hardware is not yet built, you will need to set up SSD storage and memory in your Intel ASUS NUC.
-
-![NUC Hardware](./artifacts/media/Intel-NUC-Windows-Server-LAB.jpg#center)
-
-### Install Windows Server 2025
-
-Install Windows Server 2025 on your Intel NUC. You can create a bootable USB drive to install Windows Server 2025 using the following guide.
-
-To create the USB drive to install Windows Server 2025 on a UEFI (GPT system, you do the following steps:
-
-- The at least an 8GB USB drive has to be formatted in FAT32
-- The USB needs to be GPT and not MBR
-- You will need to split the wim file using dism since it is larger than 4GB
-- Copy all files from the ISO to the USB drive
-- This is it, and here is how you do it. First, plug in your USB drive to your computer.
-
-Open a PowerShell using the Run as Administrator option. You will need to change the path of the Windows Server 2025 ISO, and you will need to replace the disk number in the script before running the third command and make sure *C:\Temp* exists. From previous experiences with users, run the script line by line.
-
-> [!NOTE]
-> The following commands will wipe the USB Drive completely. Backup everything before you run through the PowerShell.
-
-```powershell
-# Define Path to the Windows Server 2025 ISO
-$ISOFile = "C:\Temp\WindowsServer2025.iso"
-
-# Create temp diectroy for new image
-$newImageDir = New-Item -Path 'C:\Temp\newimage' -ItemType Directory
-
-# Mount iso
-$ISOMounted = Mount-DiskImage -ImagePath $ISOFile -StorageType ISO -PassThru
-
-# Driver letter
-$ISODriveLetter = ($ISOMounted | Get-Volume).DriveLetter
-
-# Copy Files to temporary new image folder 
-Copy-Item -Path ($ISODriveLetter +":\*") -Destination C:\Temp\newimage -Recurse
-
-# Split and copy install.wim (because of the filesize)
-dism /Split-Image /ImageFile:C:\Temp\newimage\sources\install.wim /SWMFile:C:\Temp\newimage\sources\install.swm /FileSize:4096
-
- 
-# Get the USB Drive you want to use, copy the disk number
-Get-Disk | Where BusType -eq "USB"
- 
-# Get the right USB Drive (You will need to change the number)
-$USBDrive = Get-Disk | Where Number -eq 2
- 
-# Replace the Friendly Name to clean the USB Drive (THIS WILL REMOVE EVERYTHING)
-$USBDrive | Clear-Disk -RemoveData -Confirm:$true -PassThru
- 
-# Convert Disk to GPT
-$USBDrive | Set-Disk -PartitionStyle GPT
- 
-# Create partition primary and format to FAT32
-$Volume = $USBDrive | New-Partition -Size 8GB -AssignDriveLetter | Format-Volume -FileSystem FAT32 -NewFileSystemLabel WS2025
- 
-# Copy Files to USB (Ignore install.wim)
-Copy-Item -Path C:\Temp\newimage\* -Destination ($Volume.DriveLetter + ":\") -Recurse -Exclude install.wim
-
-# Dismount ISO
-Dismount-DiskImage -ImagePath $ISOFile
-```
-
-### Install Network Driver
-
-If you are using an Intel NUC, Windows Server will not detect the network driver automatically. You will need to download the Windows 11 network driver from the official support site and follow the following guide to install it.
-
-Download the latest Networking Drivers for Windows 11 on the ASUS Intel NUC (Intel Ethernet (LAN) Driver for Windows 11 for Intel NUC 13 Pro Kit / Mini PC) [support site](https://www.asus.com/us/displays-desktops/nucs/nuc-mini-pcs/asus-nuc-13-pro/helpdesk_download?model2Name=ASUS-NUC-13-Pro).
-
-> [!NOTE]
-> This driver can also be forced to use with Windows Server 2025. Keep in mind it is not recommended to do this with production systems.
-
-![Download ASUS Intel NUC Network Adapter NIC driver](./artifacts/media/Download-ASUS-Intel-NUC-Network-Adapter-NIC-driver-scaled.jpg#center)
-
-Copy the drivers to your ASUS Intel NUC and extract driver zip file and you will see the following files:
-
-![Intel NIC drivers](./artifacts/media/Intel-NIC-Drivers.jpg#center)
-
-Open Device Manager right click on **Ethernet Controller** and select **Update Driver**.
-
-![Update Network Driver](./artifacts/media/Update-Network-Driver.jpg#center)
-
-Select **“Browe on my computer for driver software”**, and select **“Let me pick from a list of available drivers on my computer”**, now you can select **Network Adapter**.
-
-![Let me pick from a list of available drivers on my computer](./artifacts/media/Let-me-pick-from-a-list-of-available-drivers-on-my-computer.jpg#center)
-
-Click on **“Have Disk…”** enter the following path where you extracted the drivers to.
-
-![Driver Location](./artifacts/media/Driver-Location.jpg#center)
-
-Now select Intel Ethernet Connection I219-LM
-
-![Intel Ethernet Controller I225-LM](./artifacts/media/Intel-Ethernet-Controller-I225-LM.jpg#center)
-
-Now you are done and you will be able to use the network adapter of the Asus Intel NUC with Windows Server 2025.
-
-> [!NOTE]
-> As a workaround you can also use a USB to Ethernet adapter. [Original Guide: Install ASUS Intel NUC Windows Server 2025 Network Adapter Driver](https://www.thomasmaurer.ch/2024/07/install-asus-intel-nuc-windows-server-2025-network-adapter-driver/)
-
-### Set name of your Azure Adaptive Cloud LabKit
-
-Run the following command to change the server name of your Adaptive Cloud Lab Kit:
-
-```powershell
-Rename-Computer -NewName "AdaptiveCloudLabKit01"
-```
-
-### Set up Hyper-V
-
-After you have successfully installed the network driver for your machine, make sure you installed the latest Microsoft Updates.
-
-Now you can enable the Hyper-V role, which will allow you to create virtual machines running on your Azure Adaptive Cloud Lab Kit. You can use the following PowerShell command to [install the Hyper-V role](https://www.thomasmaurer.ch/2017/08/install-hyper-v-on-windows-server-using-powershell/). After running this command you will need to restart your Lab Kit.
-
-```powershell
-Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools
-```
-### Onboard Azure Adaptive Cloud Lab Kit to Azure using Azure Arc
-
-You can start the Azure Arc Setup wizard in different ways on a Windows Server machine. One way is to click on the system tray icon at the bottom of the screen. This icon appears when the Azure Arc Setup feature is turned on, which is the default setting. Another way is to open the pop-up window in the Server Manager. A third way is to go to the Windows Server Start menu and select the wizard from there.
-
-![Get Started with Azure Arc Setup on Windows Server](./artifacts/media/Get-Started-with-Azure-Arc-Azure-Arc-Setup-on-Windows-Server.jpg#center)
-
-Follow the wizard to onboard your Adaptive Cloud Lab kit with Azure Arc. If you need more information check out the following [page](https://www.thomasmaurer.ch/2023/12/azure-arc-setup-on-windows-server/).
-
-![Installing Azure Arc on Winodws Server](./artifacts/media/Installing-Azure-Arc-on-Winodws-Server.jpg#center)
-
-Your Adaptive Cloud Lab Kit is now ready to run virtual machines, Kubernetes clusters and other workloads and connect them using Azure Arc and deploy Arc Jumpstart scenarios.
-
-## Jumpstart Scenarios
-
-With the Azure Adaptive Cloud Lab Kit hardware in place, you're now equipped to dive into a variety of Arc Jumpstart scenarios. This setup enables you to thoroughly evaluate hybrid cloud and edge computing environments. Utilizing services like Azure Arc, Azure Kubernetes Service (AKS), Azure Stack HCI, and Azure IoT, you can explore and test the integration and management capabilities of Azure across different infrastructures, ensuring a seamless and scalable deployment of applications and services.
-
-Check out the following Arc Jumpstart scenarios:
-
-- [Arc-enabled servers](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_servers)
-- [Arc-enabled Kubernetes](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_k8s)
-- [Arc-enabled SQL Server](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_sqlsrv)
-- [Arc, Edge, and Azure IoT Operations](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_edge_iot_ops)
-- [Arc and Azure Lighthouse](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_lighthouse)
-- [Arc-enabled data services](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data)
-- and more on [ArcJumpstart.com](https://arcjumpstart.com/)
-
-## Resources
-
-You can find more information on related topics for the Azure Adaptive Cloud Lab Kit x Arc Jumpstart with the following links:
-
-- [Contribute to the Azure Adaptive Cloud Lab Kit](https://github.com/thomasmaurer/AdaptiveCloudLabKit/)
-
-To learn about Microsoft's Azure Adaptive Cloud approach, [get started with our homepage](https://azure.microsoft.com/solutions/hybrid-cloud-app/).
-
-### Azure documentation
-
-- [Azure Arc Documentations](https://learn.microsoft.com/azure/azure-arc/)
-- [Azure Stack HCI Documentations](https://learn.microsoft.com/azure-stack/hci/)
-- [Azure Kubernetes Service (AKS) enabled by Azure Arc Documentations](https://learn.microsoft.com/azure/aks/hybrid/)
-- [Azure IoT Documentations](https://learn.microsoft.com/azure/iot/)
-
-### Addtional assets
-
-- [Arc Jumpstart](https://aka.ms/AzureArcJumpstart)
-- [Azure Arc Landing Zone Accelerators](https://aka.ms/ArcLZAcceleratorReady)
+- [Cesar De la Torre | Principal Program Manager at Microsoft](cesardl@microsoft.com)
