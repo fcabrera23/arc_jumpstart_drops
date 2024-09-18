@@ -1,0 +1,45 @@
+{
+  "Title": "Welcome to Arc Jumpstart!Welcome to Arc Jumpstart!Welcome to Arc Jumpstart!Welcome to Arc Jumpstart!",
+  "Summary": "Welcome to Arc Jumpstart!1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890Welcome to Arc Jumpstart!1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890",
+  "Type": "template",
+  "Authors": [
+    {
+      "Name": "Welcome to Arc Jumpstart!",
+      "Link": "https://github.com/Pankaja05"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Azure Arc",
+    "Azure DevOps",
+    "Testing"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/template/welcome_to_arc_jumpstart!welcome_to_arc_jumpstart!welcome_to_arc_jumpstart!welcome_to_arc_jumpstart!",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Go",
+    "Bash",
+    ".NET / C#",
+    "Bicep",
+    "NodeJS",
+    "PowerShell",
+    "Terraform",
+    "Python",
+    "Java",
+    "TypeScript",
+    "JavaScript",
+    "Rust",
+    "Ruby",
+    "1234567890"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI",
+    "K3s",
+    "IoT",
+    "Kubernetes",
+    "Container",
+    "Industrial IoT",
+    "topics"
+  ]
+}
