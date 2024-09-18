@@ -1,0 +1,22 @@
+{
+  "Title": "azzffdfddf",
+  "Summary": "aadsaddasdsa",
+  "Type": "template",
+  "Authors": [
+    {
+      "Name": "fddsdsfdfsdfs",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "Azure EventGrid Namespace"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/template/azzffdfddf",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "Industrial IoT"
+  ]
+}
