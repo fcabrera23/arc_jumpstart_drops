@@ -1,0 +1,22 @@
+{
+  "Title": "dsdsfdsdfs",
+  "Summary": "sadsasafafsaf",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "dadadaaddas",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/dsdsfdsdfs",
+  "ProgrammingLanguage": [
+    "Ansible"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Industrial IoT"
+  ]
+}
