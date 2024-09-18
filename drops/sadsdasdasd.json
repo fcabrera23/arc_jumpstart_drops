@@ -1,0 +1,22 @@
+{
+  "Title": "sadsdasdasd",
+  "Summary": "xssasasdsaa",
+  "Type": "script_automation",
+  "Authors": [
+    {
+      "Name": "sasaddadas",
+      "Link": "https://github.com/Priyanka082024/"
+    }
+  ],
+  "Products": [
+    "MongoDB"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/sadsdasdasd",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
