@@ -1,0 +1,24 @@
+{
+  "Title": "CBroad - Good stuff",
+  "Summary": "big desc",
+  "Type": "library_package",
+  "Authors": [
+    {
+      "Name": "chuckb asfderasdf",
+      "Link": "https://google.com/chuckdidit"
+    }
+  ],
+  "Products": [
+    "Azure DevOps",
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/cbroad_-_good_stuff",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "K3s",
+    "Container"
+  ]
+}
