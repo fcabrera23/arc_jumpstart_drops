@@ -1,0 +1,23 @@
+{
+  "Title": "asassas",
+  "Summary": "vdsassfsfafsasaf",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "asasasa",
+      "Link": "https://github.com/Priyanka082024"
+    }
+  ],
+  "Products": [
+    "Azure Arc"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/asassas",
+  "ProgrammingLanguage": [
+    "Ansible",
+    "Terraform"
+  ],
+  "Difficulty": "Advanced",
+  "Topics": [
+    "K3s"
+  ]
+}
