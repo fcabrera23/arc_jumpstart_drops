@@ -9,7 +9,7 @@
       "Link": "https://www.linkedin.com/in/cheng-chen-a8496850/"
     }
   ],
-  "Source": "",
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/multi-modal_retrieval-augmented_generation_on_edge",
   "Type": "sample_app",
   "Difficulty": "Medium",
   "ProgrammingLanguage": [
@@ -21,7 +21,7 @@
     "Marqo",
     "LLaVa"
   ],
-  "LastModified": "2024-07-16T02:09:07.000Z",
+  "LastModified": "2024-08-08T06:47:04.000Z",
   "CreatedDate": "2024-07-08T00:00:00.000Z",
   "Topics": [
     "RAG",
