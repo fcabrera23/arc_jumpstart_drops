@@ -1,0 +1,25 @@
+{
+  "Title": "Testing - ----- Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart Overview",
+  "Summary": "The Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart allows you to test various kinds of Azure Adaptive Cloud solutions for hybrid cloud and edge computing, using technologies such as Azure Arc, Azure Stack HCI, and Azure IoT. It provides a ph",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "test1",
+      "Link": "https://github.com/Pankaja05"
+    }
+  ],
+  "Products": [
+    "Azure Event Grid Namespace",
+    "Test123",
+    "Azure DevOps",
+    "InfluxDB"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/testing_-_-----_unofficial_azure_adaptive_cloud_lab_kit_x_arc_jumpstart_overview",
+  "ProgrammingLanguage": [
+    "Java"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
