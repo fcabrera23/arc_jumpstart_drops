@@ -11,9 +11,9 @@
   ],
   "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/azure_arc_management_workbook",
   "Type": "ui_dashboard_workbook",
-  "Difficulty": "Low",
+  "Difficulty": "Beginner",
   "ProgrammingLanguage": [
-    "Bash"
+    "JSON"
   ],
   "Products": [
     "Azure Monitor",
@@ -21,9 +21,7 @@
     "Arc",
     "Arc-enabled Servers"
   ],
-  "LastModified": "2024-03-15T18:25:43.511Z",
+  "LastModified": "2024-05-16T12:22:36.000Z",
   "CreatedDate": "2024-03-15T10:30:16.201Z",
-  "Topics": [
-    "AI"
-  ]
+  "Topics": []
 }
