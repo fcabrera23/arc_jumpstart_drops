@@ -1,0 +1,25 @@
+{
+  "Title": "Ruth Test",
+  "Summary": "Testss",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "Ruth",
+      "Link": "https://www.linkedin.com/in/ruthmchen/"
+    }
+  ],
+  "Products": [
+    "Ruth Test",
+    "Azure Event Grid Namespace",
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops",
+  "ProgrammingLanguage": [
+    "Go",
+    "Bash"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "AI"
+  ]
+}
