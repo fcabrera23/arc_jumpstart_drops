@@ -1,0 +1,24 @@
+{
+  "Title": "SDFDF",
+  "Summary": "SDFSDFDSFGDRFG",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "DFGDFG",
+      "Link": "FACEBOOK.COM/ABC"
+    }
+  ],
+  "Products": [
+    "123",
+    "Azure DevOps",
+    "Azure IoT Operations"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/sdfdf",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
