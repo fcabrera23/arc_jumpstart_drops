@@ -1,0 +1,25 @@
+{
+  "Title": "test",
+  "Summary": "testing",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "test",
+      "Link": "test.com/pink"
+    }
+  ],
+  "Products": [
+    "Azure Arc",
+    "Arc-enabled Kubernetes",
+    "Arc-enabled Servers",
+    "Azure DevOps"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/test",
+  "ProgrammingLanguage": [
+    "Bicep"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
