@@ -1,7 +1,7 @@
 {
   "Title": "test",
   "Summary": "testing",
-  "Type": "sample_app",
+  "Type": "library_package",
   "Authors": [
     {
       "Name": "test",
@@ -9,16 +9,18 @@
     }
   ],
   "Products": [
-    "Azure Arc",
     "Arc-enabled Kubernetes",
+    "Azure Arc",
     "Arc-enabled Servers",
     "Azure DevOps"
   ],
-  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/test",
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/test",
   "ProgrammingLanguage": [
-    "Bicep"
+    "Ansible",
+    ".NET / C#",
+    "Go"
   ],
-  "Difficulty": "Medium",
+  "Difficulty": "Beginner",
   "Topics": [
     "Kubernetes"
   ]
