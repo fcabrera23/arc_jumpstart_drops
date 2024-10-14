@@ -1,0 +1,26 @@
+{
+  "Title": "Test - Drop creation",
+  "Summary": "Testing - drop creation",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "pink",
+      "Link": "google.com/pink"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Azure Arc",
+    "1234",
+    "123"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/test_-_drop_creation",
+  "ProgrammingLanguage": [
+    "Bash",
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "AI"
+  ]
+}
