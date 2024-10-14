@@ -1,0 +1,22 @@
+{
+  "Title": "wegwegewgw",
+  "Summary": "esgewgewsgewg",
+  "Type": "ui_dashboard_workbook",
+  "Authors": [
+    {
+      "Name": "wgwegwe",
+      "Link": "https://www.linkedin.com/in/ruthmchen/"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/ui_dashboard_workbook/wegwegewgw",
+  "ProgrammingLanguage": [
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "K3s"
+  ]
+}
