@@ -1,0 +1,29 @@
+{
+  "Title": "dsadsad",
+  "Summary": "sadasdasdasdasdsadsadas",
+  "Type": "tutorial_guide",
+  "Authors": [
+    {
+      "Name": "sdasad",
+      "Link": "facebook.com/usama"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "dsadsadsadasdas",
+    "Azure Event Grid Namespace",
+    "Azure Arc"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/tutorial_guide/dsadsad",
+  "ProgrammingLanguage": [
+    "NodeJS",
+    "Go",
+    ".NET / C#"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "K3s",
+    "Industrial IoT",
+    "Container"
+  ]
+}
