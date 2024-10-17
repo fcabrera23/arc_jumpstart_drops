@@ -1,7 +1,9 @@
 {
   "Title": "Title",
   "Summary": "Card description",
-  "Type": "",
+  "Type": "script_automation",
+  "Cover": "",
+  "Description": "",
   "Authors": [
     {
       "Name": "Author",
@@ -14,8 +16,10 @@
     "Tag",
     "Tag"
   ],
-  "Source": "https://github.com/Priyanka082024/Repo1",
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/title",
   "ProgrammingLanguage": [],
-  "Difficulty": "",
-  "Topics": []
+  "Difficulty": "Medium",
+  "Topics": [],
+  "LastModified": "",
+  "CreatedDate": ""
 }
