@@ -1,270 +1,169 @@
-## Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart Overview
+---
+type: docs
+title: "Azure Stack HCI - IaC Template Examples"
+linkTitle: "This Drop provides examples of Infrastructure as Code (IaC) templates for Deploying Azure Stack HCI."
+weight: 1
+description: >
+---
 
-The Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart allows you to test various kinds of Azure Adaptive Cloud solutions for hybrid cloud and edge computing, using technologies such as Azure Arc, Azure Stack HCI, and Azure IoT. It provides a physical NUC compute unit running Windows Server 2025 with a virtualization environment specially designed to work with home labs and edge scenarios. It also provides automated zero-to-hero scenarios for Azure Arc and Azure IoT using the Arc Jumpstart.
+## Azure Stack HCI - IaC Template Examples
 
-![Unofficial Azure Adaptive Cloud Lab Kit x Arc Jumpstart](./artifacts/media/Azure-Adaptive-Cloud-Lab-Kit-x-Arc-Jumpstart.jpg#center)
+This drop provides example of Infrastructure as Code (IaC) templates for Deploying Azure Stack HCI. The templates are written in ARM and Bicep and can be used to deploy Azure Stack HCI clusters in Azure in a Scalable manner
+> **Note:**  The Jumpstart Drop is unsupported and should ONLY be used for demo, testing and learning purposes.
 
-The lab environment provides you with a virtual lab environment, including a physical Hyper-V server running Windows Server 2025 which allows you to run virtual machines. This allows you to leverage this as a platform to run Arc Jumpstart scenarios to try adaptive cloud solutions for hybrid cloud and edge scenarios. It also includes the possibilities to test Azure services such as:
-
-- Arc-enabled servers
-- Arc-enabled SQL Server
-- Arc-enabled Kubernetes
-- Arc-enabled data services
-- Arc-enabled app services
-- Arc-enabled machine learning
-- Arc, Edge, and Azure IoT Operations
-- Arc and Azure Lighthouse
-- AKS enable by Azure Arc, AKS Edge Essentials
-- and more
-
-> [!NOTE]
-> The unofficial Adaptive Cloud Lab Kit is **not** supported by Microsoft and only has community support. This project is **not** sponsored by any third-party.
+> **Note:** This Jumpstart Drop provides the script to onboard an Azure Stack HCI Cluster, you will need to ensure you have completed all PreRequisites of Azure Stack HCI Cloud Deployment before deploying. [Deploy Azure Stack HCI 23H2](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-introduction)..
 
 ## Contributors
 
 This Jumpstart Drop was originally written by the following contributors:
 
-- [Thomas Maurer | Principal Program Manager](https://www.linkedin.com/in/thomasmaurer2)
-
-- [Contribute to the Azure Adaptive Cloud Lab Kit](https://github.com/thomasmaurer/AdaptiveCloudLabKit/)
-
-## Getting Started
-
-The Azure Adaptive Cloud Lab Kit x Arc Jumpstart consists of two components: the lab environment and the self-guided Arc Jumpstart scenarios. The Arc Jumpstart scenarios are directly hosted on the Arc Jumpstart website and can be used for creating your labs.
-
-![Azure Adaptive Cloud Lab Kit Architecture](./artifacts/media/Azure-Adaptive-Cloud-Lab-Kit-Archiecture.jpg#center)
-
-### Important things to know 
-
-- This lab kit contains evaluation software that is designed for IT professionals interested in evaluating Windows Server and Azure solutions and tools on behalf of their organization. We do not recommend that you install this evaluation if you are not an IT professional or are not professionally managing corporate networks or devices.
-- Additionally, the lab environment is intended for evaluation purposes only. It is a standalone virtual environment and should not be used or connected to your production environment.
-- The Windows Server 2025 Evaluation version expires 180 days after the lab is provisioned.
-- This project is a community project and is **not** sponsored by any third-party.
-- The unofficial Adaptive Cloud Lab Kit is **not** supported by Microsoft and only has community support.
-- You are welcome to [support and contirbute to the project](https://github.com/thomasmaurer/AdaptiveCloudLabKit/).
-- Windows Server 2025 Evaluation licenses should only be used for evaluation porpuses.
-- By enabling additional Azure services, additional costs may apply.
-- Device is connected using Ethernet
+- [Michael Godfrey | Senior Program Manager at Microsoft](https://www.linkedin.com/in/migodfre)
 
 ## Prerequisites
 
-To get started with the Azure Adaptive Cloud Lab Kit you need the following:
+- Clone the Azure Arc Drops repository
+
+    ```shell
+    git clone https://github.com/Azure/arc_jumpstart_drops.git
+    ```
 
-- Lab Kit Hardware (Intel ASUS NUC or similar)
-- Windows Server 2025 Evaluation version
-- USB flash drive
-- Azure Subscription
-- Internet Connectivity / Wired Network connection
+- Completion of [Register your servers with Azure Arc and assign deployment permissions](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-arc-register-server-permissions). Make sure that:
+    - All the mandatory extensions are installed successfully. The mandatory extensions include: **Azure Edge Lifecycle Manager**, **Azure Edge Device Management**, and **Telemetry and Diagnostics**.
+    - All servers are running the same version of OS.
+    - All the servers have the same network adapter configuration.
 
-### Lab Kit Hardware
+- Prepare Azure Resources
+  - [Ensure you have a Service Principal with Correct Subscription and Resource Group Permissions](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-azure-resource-manager-template#create-a-service-principal)
+  - [Pre-Create Cloud Witness Storage Account](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-azure-resource-manager-template#create-a-cloud-witness-storage-account)
+  - [Encode Parameter Values](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-azure-resource-manager-template#encode-parameter-values)
+  - [Assign Resource Permissions ](https://learn.microsoft.com/en-us/azure-stack/hci/deploy/deployment-azure-resource-manager-template#step-2-assign-resource-permissions)
 
-The Azure Adaptive Cloud Lab Kit x Arc Jumpstart consists of, and is built by using an Intel NUC, NUC stands for Next Unit of Computing and is a line of small-form-factor barebone computer kits designed by Intel. The advantage of this machine is the small formfactor, low power consumption and almost no fan noise.
+## Getting Started
 
-> [!NOTE]
-> Also other hardware systems with similar specifications can be used.
+### Prepare Parameter File
+- In order to Deploy the ASHCI Cluster you will need to create a Parameter File with Values that apply to your Environment. Make a copy of the parameter file that applies to your chosen ASHCI Network Configuration, In this Jumpstart DROP, three common examples are provided:
+    - [2 Node Switch less](script_automation/arc_ashci_iac/artifacts/Templates/ARM/ASHCI-CloudDeploy-2NodeSwitchless.parameters.json)
+    - [3 Node Switch less](script_automation/arc_ashci_iac/artifacts/Templates/ARM/ASHCI-CloudDeploy-3NodeSwitchless.parameters.json)
+    - [Fully Converged](script_automation/arc_ashci_iac/artifacts/Templates/ARM/ASHCI-CloudDeploy-FullyConverged.parameters.json) 
 
-| Amount| Hardware | 
-| ------- | -- | 
-| 1x | ASUS NUC 13 Pro Kit NUC13ANHi5 (Intel Core i5-1340P) | 
-| 1x | WD Black SN850X 1000 GB, M.2 2280 | 
-| 2x | Corsair Vengeance 32GB, 3200 MHz, DDR4-RAM, SO-DIMM |
+### Editing the Parameters File
 
-> [!NOTE]
-> The Intel ASUS NUC hardware doesn't provide any drivers for Windows Server operating systems. Therefore, networking drivers need to be added with a workaround.
+Open the selected Parameter File using an editor and provide the values for the environment variables to match your environment. You will need to provide:
 
-![Lab Kit hardware](./artifacts/media/Lab-Kit-Hardware-Intel-ASUS-NUC-scaled.jpg#center)
+- `DeploymentMode`: Choose between **Validate** & **Deploy**, your first deployment will always use the Validate Variable.
+- `KeyVaultName`: Provide the name of the Azure Key Vault that will be created to store ASHCI Cloud Deployment Secrets
+- `softDeleteRetentionDays`: Number of Days Azure Key Vault will be retained in case of Deletion (Optional)
+- `diagnosticStorageAccountName`: Name of Azure Storage Account that will be used for Diagnostic Logs associated with the Azure Key Vault
+- `logsRetentionInDays`: Number of Days Key Vault Diagnostics will be retained (Optional)
+- `storageAccountType`: Azure Storage Account Type
+- `secretsLocation`: URI to Azure Key Vault, this should match the name of your Key Vault
+- `ClusterWitnessStorageAccountName`: Name of Cloud Witness Azure Storage Account that was created in PreRequisites
+- `ClusterName`: Active Directory Name of the Desired ASHCI Cluster
+- `Location`: Provide the Azure Region
+- `TenantID`: Provide your Tenant ID
+- `localAdminSecretValue`: This should be base64 value in UserName:Password format of the Local Administrator Account
+- `domainAdminSecretValue`: This should be base64 value in UserName:Password format of the AD Service Account used to Join Domain, Create Cluster, etc.
+- `arbDeploymentSpnValue`: Azure EntraID SPN Account from Prerequisites, as a base64 value in ApplicationID:Client Secret format.
+- `storageWitnessValue`: This should be base64 value of the Storage Account Access Key in StorageAccountKey format.
+- `arcNodeResourceIds`: Provide the Arc-Enabled Machine Resource ID of all the ASHCI nodes
+- `domainFqdn`: Fully Qualified Domain Name that ASHCI Cluster will be deployed into
+- `namingPrefix`: Prefix for all ASHCI Infra Resources that will be created. 
+- `adouPath`: Provide OU to place AHSCI Cluster and Node Computer Objects
+- `subnetMask`: subnet mask of Management Network
+- `defaultGateway`: Gateway IP of Management Network
+- `startingIPAddress`: Starting Address for IP Range for ASHCI Infra Services (Requires 6 Consecutive IP Addresses)
+- `endingIPAddress`: Ending Address for IP Range for ASHCI Infra Services
+- `dnsServers`: IP Addresses of DNS Servers in Array Format
+- `physicalNodesSettings`: Array Table of ASHCI Node Names and Assigned IP Address
+- `intentList`: Array Table of ASHCI NetworkATC Intent. The Adapter array needs to be updated with the Consistent Network Adapter names across all ASHCI Nodes
+- `storageNetworkList`: Name of Storage Networks, the Network Adapter Names, and the Associated VLAN Tag
+- `CustomLocation`: The Name of your ASHCI Location, this will be the value that workloads (VM/AKS/AVDonHCI/etc will be deployed to. This is similar to Azure Region)
 
- ### System Requirements
 
-- The lab environment used with this lab guide supports the 64-bit editions of Windows Server 2025 or later. 
-- The Hyper-V Host on which the lab needs to be imported must meet the following minimum specifications:
-- Hyper-V role installed
-- Administrative rights on the device
-- 500 GB of free disk space (1TB recommended)
-- High-throughput disk subsystem
-- 32GB of available memory (64 GB recommended)
-- High-end processor for faster processing (Intel Core i5 or higher)
+### Deploy using ARM template
 
-### Windows Server 2025 Evaluation version
+With all the prerequisite and preparation steps complete, you're ready to deploy using a known good and tested ARM deployment template and corresponding parameters JSON file. Use the parameters contained in the JSON file to fill out all values, including the encoded values generated previously. 
 
-Download the latest Windows Server 2025 Evaluation version here: 
+> [!IMPORTANT] 
+> In this release, make sure that all the parameters contained in the JSON value are filled out including the ones that have a null value. If there are null values, then those need to be populated or the validation fails.
 
-[Evaluaton Center](https://www.microsoft.com/en-us/evalcenter/download-windows-server-2025)
+1. In Azure portal, go to **Home** and select **+ Create a resource**.
 
-### Azure Subscription
+1. Select **Create** under **Template deployment (deploy using custom templates)**
+    ![Screenshot showing the template deployment (deploy using custom template).](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-1.png)        
 
-To use Azure services, you will need to use an Azure subscription. If you don't have an Azure subscription check out the following links:
+1. Near the bottom of the page, find **Start with a quickstart template or template spec** section. Select **Quickstart template** option.
+    ![Screenshot showing the quickstart template selected.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-2.png)
+   
+1. Use the **Quickstart template (disclaimer)** field to filter for the appropriate template. Type *azurestackhci/create-cluster* for the filter.
 
-[Azure free account](https://azure.microsoft.com/free/)
+1. When finished, **Select template**.
+    ![Screenshot showing template selected](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-3.png)
 
-### Internet Connectivity
+1. On the **Basics** tab, you see the **Custom deployment** page. You can select the various parameters through the dropdown list or select **Edit parameters**.
+     ![Screenshot showing Custom deployment page on the Basics tab.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-4.png)
 
-Please use a broad bandwidth to download this content to enhance your downloading experience.
+1. Edit parameters such as network intent or storage network intent. Once the parameters are all filled out, **Save** the parameters file.
+    ![Screenshot showing parameters filled out for the template.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-5.png)
 
-## Installation Guide
+1. Select the appropriate resource group for your environment.
 
-You can follow these basic steps to set up your Azure Adaptive Cloud Lab Kit feat. Arc Jumpstart with the following steps.
+1.  Scroll to the bottom, and confirm that **Deployment Mode = Validate**.
 
-### Build your NUC hardware
+1. Select **Review + create**.
+   ![Screenshot showing Review + Create selected on Basics tab.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-6.png)
 
-If your hardware is not yet built, you will need to set up SSD storage and memory in your Intel ASUS NUC.
+1. On the **Review + Create** tab, select **Create**. This creates the remaining prerequisite resources and validates the deployment. Validation takes about 10 minutes to complete.
+    ![Screenshot showing Create selected on Review + Create tab.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-7.png)
 
-![NUC Hardware](./artifacts/media/Intel-NUC-Windows-Server-LAB.jpg#center)
+1.  Once validation is complete, select **Redeploy**.
+     ![Screenshot showing Redeploy selected](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-7a.png)
 
-### Install Windows Server 2025
+1. On the **Custom deployment** screen, select **Edit parameters**. Load up the previously saved parameters and select **Save**.
 
-Install Windows Server 2025 on your Intel NUC. You can create a bootable USB drive to install Windows Server 2025 using the following guide.
+1. At the bottom of the workspace, change the final value in the JSON from **Validate** to **Deploy**, where **Deployment Mode = Deploy**. 
+     ![Screenshot showing deploy selected for deployment mode.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-7b.png)
 
-To create the USB drive to install Windows Server 2025 on a UEFI (GPT system, you do the following steps:
+1. Verify that all the fields for the ARM deployment template have been filled in by the Parameters JSON.
 
-- The at least an 8GB USB drive has to be formatted in FAT32
-- The USB needs to be GPT and not MBR
-- You will need to split the wim file using dism since it is larger than 4GB
-- Copy all files from the ISO to the USB drive
-- This is it, and here is how you do it. First, plug in your USB drive to your computer.
+1. Select the appropriate resource group for your environment.
 
-Open a PowerShell using the Run as Administrator option. You will need to change the path of the Windows Server 2025 ISO, and you will need to replace the disk number in the script before running the third command and make sure *C:\Temp* exists. From previous experiences with users, run the script line by line.
+1. Scroll to the bottom, and confirm that **Deployment Mode = Deploy**.
 
-> [!NOTE]
-> The following commands will wipe the USB Drive completely. Backup everything before you run through the PowerShell.
+1. Select **Review + create**.
 
-```powershell
-# Define Path to the Windows Server 2025 ISO
-$ISOFile = "C:\Temp\WindowsServer2025.iso"
+1. Select **Create**. This begins deployment, using the existing prerequisite resources that were created during the **Validate** step.
 
-# Create temp diectroy for new image
-$newImageDir = New-Item -Path 'C:\Temp\newimage' -ItemType Directory
+    The Deployment screen cycles on the Cluster resource during deployment.
 
-# Mount iso
-$ISOMounted = Mount-DiskImage -ImagePath $ISOFile -StorageType ISO -PassThru
+    Once deployment initiates, there's a limited Environment Checker run, a full Environment Checker run, and cloud deployment starts. After a few minutes, you can monitor deployment in the portal.
 
-# Driver letter
-$ISODriveLetter = ($ISOMounted | Get-Volume).DriveLetter
+   ![Screenshot showing the status of environment checker validation.](./artifacts/media/deployment-azure-resource-manager-template/deploy-arm-template-9.png)
 
-# Copy Files to temporary new image folder 
-Copy-Item -Path ($ISODriveLetter +":\*") -Destination C:\Temp\newimage -Recurse
+1. In a new browser window, navigate to the resource group for your environment. Select the cluster resource.
 
-# Split and copy install.wim (because of the filesize)
-dism /Split-Image /ImageFile:C:\Temp\newimage\sources\install.wim /SWMFile:C:\Temp\newimage\sources\install.swm /FileSize:4096
+1. Select **Deployments**.
 
- 
-# Get the USB Drive you want to use, copy the disk number
-Get-Disk | Where BusType -eq "USB"
- 
-# Get the right USB Drive (You will need to change the number)
-$USBDrive = Get-Disk | Where Number -eq 2
- 
-# Replace the Friendly Name to clean the USB Drive (THIS WILL REMOVE EVERYTHING)
-$USBDrive | Clear-Disk -RemoveData -Confirm:$true -PassThru
- 
-# Convert Disk to GPT
-$USBDrive | Set-Disk -PartitionStyle GPT
- 
-# Create partition primary and format to FAT32
-$Volume = $USBDrive | New-Partition -Size 8GB -AssignDriveLetter | Format-Volume -FileSystem FAT32 -NewFileSystemLabel WS2025
- 
-# Copy Files to USB (Ignore install.wim)
-Copy-Item -Path C:\Temp\newimage\* -Destination ($Volume.DriveLetter + ":\") -Recurse -Exclude install.wim
+1. Refresh and watch the deployment progress from the first server (also known as the seed server and is the first server where you deployed the cluster). Deployment takes between 2.5 and 3 hours. Several steps take 40 to 50 minutes or more.
 
-# Dismount ISO
-Dismount-DiskImage -ImagePath $ISOFile
-```
+    > [!NOTE]
+    > If you check back on the template deployment, you will see that it eventually times out. This is a known issue, so watching **Deployments** is the best way to monitor the progress of deployment.
 
-### Install Network Driver
+1. The step in deployment that takes the longest is **Deploy Moc and ARB Stack**. This step takes ~40 to 45 minutes.
 
-If you are using an Intel NUC, Windows Server will not detect the network driver automatically. You will need to download the Windows 11 network driver from the official support site and follow the following guide to install it.
+    Once complete, the task at the top updates with status and end time.
 
-Download the latest Networking Drivers for Windows 11 on the ASUS Intel NUC (Intel Ethernet (LAN) Driver for Windows 11 for Intel NUC 13 Pro Kit / Mini PC) [support site](https://www.asus.com/us/displays-desktops/nucs/nuc-mini-pcs/asus-nuc-13-pro/helpdesk_download?model2Name=ASUS-NUC-13-Pro).
+### Next Steps
+ Now that your Azure Stack HCI Cluster is built you can move on to the next steps which include:
 
-> [!NOTE]
-> This driver can also be forced to use with Windows Server 2025. Keep in mind it is not recommended to do this with production systems.
+1. [Download Azure Marketplace Images](https://learn.microsoft.com/en-us/azure-stack/hci/manage/virtual-machine-image-azure-marketplace)
+1. [Download Custom Images](https://learn.microsoft.com/en-us/azure-stack/hci/manage/virtual-machine-image-local-share)
+1. [Create Logical Networks](https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-logical-networks?tabs=azurecli)
 
-![Download ASUS Intel NUC Network Adapter NIC driver](./artifacts/media/Download-ASUS-Intel-NUC-Network-Adapter-NIC-driver-scaled.jpg#center)
+After these steps have been completed you can begin work on deploying Workloads.
+1. [Deploy Arc Virtual Machines](https://learn.microsoft.com/en-us/azure-stack/hci/manage/create-arc-virtual-machines?tabs=azurecli)
+1. [Deploy AKS-Arc Clusters](https://learn.microsoft.com/en-us/azure/aks/hybrid/aks-create-clusters-portal)
 
-Copy the drivers to your ASUS Intel NUC and extract driver zip file and you will see the following files:
 
-![Intel NIC drivers](./artifacts/media/Intel-NIC-Drivers.jpg#center)
 
-Open Device Manager right click on **Ethernet Controller** and select **Update Driver**.
 
-![Update Network Driver](./artifacts/media/Update-Network-Driver.jpg#center)
-
-Select **“Browe on my computer for driver software”**, and select **“Let me pick from a list of available drivers on my computer”**, now you can select **Network Adapter**.
-
-![Let me pick from a list of available drivers on my computer](./artifacts/media/Let-me-pick-from-a-list-of-available-drivers-on-my-computer.jpg#center)
-
-Click on **“Have Disk…”** enter the following path where you extracted the drivers to.
-
-![Driver Location](./artifacts/media/Driver-Location.jpg#center)
-
-Now select Intel Ethernet Connection I219-LM
-
-![Intel Ethernet Controller I225-LM](./artifacts/media/Intel-Ethernet-Controller-I225-LM.jpg#center)
-
-Now you are done and you will be able to use the network adapter of the Asus Intel NUC with Windows Server 2025.
-
-> [!NOTE]
-> As a workaround you can also use a USB to Ethernet adapter. [Original Guide: Install ASUS Intel NUC Windows Server 2025 Network Adapter Driver](https://www.thomasmaurer.ch/2024/07/install-asus-intel-nuc-windows-server-2025-network-adapter-driver/)
-
-### Set name of your Azure Adaptive Cloud LabKit
-
-Run the following command to change the server name of your Adaptive Cloud Lab Kit:
-
-```powershell
-Rename-Computer -NewName "AdaptiveCloudLabKit01"
-```
-
-### Set up Hyper-V
-
-After you have successfully installed the network driver for your machine, make sure you installed the latest Microsoft Updates.
-
-Now you can enable the Hyper-V role, which will allow you to create virtual machines running on your Azure Adaptive Cloud Lab Kit. You can use the following PowerShell command to [install the Hyper-V role](https://www.thomasmaurer.ch/2017/08/install-hyper-v-on-windows-server-using-powershell/). After running this command you will need to restart your Lab Kit.
-
-```powershell
-Install-WindowsFeature -Name Hyper-V -IncludeAllSubFeature -IncludeManagementTools
-```
-### Onboard Azure Adaptive Cloud Lab Kit to Azure using Azure Arc
-
-You can start the Azure Arc Setup wizard in different ways on a Windows Server machine. One way is to click on the system tray icon at the bottom of the screen. This icon appears when the Azure Arc Setup feature is turned on, which is the default setting. Another way is to open the pop-up window in the Server Manager. A third way is to go to the Windows Server Start menu and select the wizard from there.
-
-![Get Started with Azure Arc Setup on Windows Server](./artifacts/media/Get-Started-with-Azure-Arc-Azure-Arc-Setup-on-Windows-Server.jpg#center)
-
-Follow the wizard to onboard your Adaptive Cloud Lab kit with Azure Arc. If you need more information check out the following [page](https://www.thomasmaurer.ch/2023/12/azure-arc-setup-on-windows-server/).
-
-![Installing Azure Arc on Winodws Server](./artifacts/media/Installing-Azure-Arc-on-Winodws-Server.jpg#center)
-
-Your Adaptive Cloud Lab Kit is now ready to run virtual machines, Kubernetes clusters and other workloads and connect them using Azure Arc and deploy Arc Jumpstart scenarios.
-
-## Jumpstart Scenarios
-
-With the Azure Adaptive Cloud Lab Kit hardware in place, you're now equipped to dive into a variety of Arc Jumpstart scenarios. This setup enables you to thoroughly evaluate hybrid cloud and edge computing environments. Utilizing services like Azure Arc, Azure Kubernetes Service (AKS), Azure Stack HCI, and Azure IoT, you can explore and test the integration and management capabilities of Azure across different infrastructures, ensuring a seamless and scalable deployment of applications and services.
-
-Check out the following Arc Jumpstart scenarios:
-
-- [Arc-enabled servers](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_servers)
-- [Arc-enabled Kubernetes](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_k8s)
-- [Arc-enabled SQL Server](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_sqlsrv)
-- [Arc, Edge, and Azure IoT Operations](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_edge_iot_ops)
-- [Arc and Azure Lighthouse](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_lighthouse)
-- [Arc-enabled data services](https://azurearcjumpstart.io/azure_arc_jumpstart/azure_arc_data)
-- and more on [ArcJumpstart.com](https://arcjumpstart.com/)
-
-## Resources
-
-You can find more information on related topics for the Azure Adaptive Cloud Lab Kit x Arc Jumpstart with the following links:
-
-- [Contribute to the Azure Adaptive Cloud Lab Kit](https://github.com/thomasmaurer/AdaptiveCloudLabKit/)
-
-To learn about Microsoft's Azure Adaptive Cloud approach, [get started with our homepage](https://azure.microsoft.com/solutions/hybrid-cloud-app/).
-
-### Azure documentation
-
-- [Azure Arc Documentations](https://learn.microsoft.com/azure/azure-arc/)
-- [Azure Stack HCI Documentations](https://learn.microsoft.com/azure-stack/hci/)
-- [Azure Kubernetes Service (AKS) enabled by Azure Arc Documentations](https://learn.microsoft.com/azure/aks/hybrid/)
-- [Azure IoT Documentations](https://learn.microsoft.com/azure/iot/)
-
-### Addtional assets
-
-- [Arc Jumpstart](https://aka.ms/AzureArcJumpstart)
-- [Azure Arc Landing Zone Accelerators](https://aka.ms/ArcLZAcceleratorReady)
