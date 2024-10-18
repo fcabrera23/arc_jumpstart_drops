@@ -1,0 +1,29 @@
+{
+  "Title": "Testing-create drop",
+  "Summary": "Testing123",
+  "Type": "script_automation",
+  "Authors": [
+    {
+      "Name": "Test111",
+      "Link": "https://facebook.com/user1"
+    },
+    {
+      "Name": "Test222",
+      "Link": "https://facebook.com/user2"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Azure Arc",
+    "Azure Event Grid Namespace",
+    "Test123"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/script_automation/testing-create_drop",
+  "ProgrammingLanguage": [
+    "Go"
+  ],
+  "Difficulty": "Medium",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
