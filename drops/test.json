@@ -1,0 +1,26 @@
+{
+  "Title": "Test",
+  "Summary": "Test1243",
+  "Type": "sample_app",
+  "Authors": [
+    {
+      "Name": "Test1",
+      "Link": "https://facebook.com/pink"
+    }
+  ],
+  "Products": [
+    "Arc-enabled Kubernetes",
+    "Azure Arc",
+    "Azure Event Grid Namespace",
+    "1234556"
+  ],
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/test",
+  "ProgrammingLanguage": [
+    "Bash",
+    ".NET / C#"
+  ],
+  "Difficulty": "Beginner",
+  "Topics": [
+    "Kubernetes"
+  ]
+}
