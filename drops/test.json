@@ -1,24 +1,23 @@
 {
-  "Title": "test",
-  "Summary": "testing",
-  "Type": "library_package",
+  "Title": "Test",
+  "Summary": "Test1243",
+  "Type": "sample_app",
   "Authors": [
     {
-      "Name": "test",
-      "Link": "test.com/pink"
+      "Name": "Test1",
+      "Link": "https://facebook.com/pink"
     }
   ],
   "Products": [
     "Arc-enabled Kubernetes",
     "Azure Arc",
-    "Arc-enabled Servers",
-    "Azure DevOps"
+    "Azure Event Grid Namespace",
+    "1234556"
   ],
-  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/library_package/test",
+  "Source": "https://github.com/fcabrera23/arc_jumpstart_drops/tree/main/sample_app/test",
   "ProgrammingLanguage": [
-    "Ansible",
-    ".NET / C#",
-    "Go"
+    "Bash",
+    ".NET / C#"
   ],
   "Difficulty": "Beginner",
   "Topics": [
